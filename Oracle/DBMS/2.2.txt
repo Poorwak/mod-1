@@ -1,0 +1,25 @@
+2.2.1
+
+ SELECT round(MAX(staff_sal),0) AS MAX, round(MIN(staff_sal),0) AS MIN, round(sum(staff_sal),0) AS TOTAL, round(AVG(staff_sal),0) AS AVERAGE
+ FROM staff_master
+ ORDER BY dept_code;
+
+
+
+2.2.2
+
+ SELECT Dept_code, count(mgr_code) AS "Total Number of Managers"
+ FROM staff_master
+ GROUP BY dept_code;
+
+
+
+
+2.2.3
+
+ SELECT dept_code, sum(staff_sal)
+ from staff_master
+ where mgr_code = null
+ group by dept_code
+ having sum(staff_sal) > 20000;
+

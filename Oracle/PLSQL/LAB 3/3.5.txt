@@ -1,0 +1,33 @@
+3.4
+
+create or replace procedure book(b_code in number,
+ s_code in number) 
+as 
+	issue_date date;
+	exp_date date;
+	exp_rtn_day varchar2(20);
+
+BEGIN
+
+	
+
+	select book_issue_date into issue_date from book_transactions
+	where b_code = book_code and s_code = staff_code;
+
+	issue_date := sysdate;
+	exp_date := sysdate + 10;
+
+	select to_char(exp_date, 'dy') into exp_rtn_day  from dual; 
+
+	if exp_rtn_day = 'sat' then
+		exp_date := exp_date + 2;
+	elsif exp_rtn_day = 'sun' then 
+		exp_date := exp_date + 1;
+	end if;
+
+END book;
+/
+
+
+
+

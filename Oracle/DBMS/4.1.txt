@@ -1,0 +1,237 @@
+4.1.1
+
+ CREATE TABLE customer(
+ CustomerId number(5),
+ Cust_Name varchar2(20),
+ Address1 Varchar2(30),
+ Address2 Varchar2(30));
+
+
+4.1.2
+
+ ALTER TABLE customer
+ MODIFY(Cust_Name varchar2(30));
+ ALTER TABLE customer RENAME COLUMN Cust_Name TO CustomerName;
+
+
+4.1.3 (a)
+
+ ALTER TABLE customer
+ ADD (Gender varchar2(1),
+ Age Number(3),
+ PhoneNo Number(10));
+
+
+4.1.3 (b)
+
+ RENAME customer TO Cust_Table;
+
+
+4.1.4
+
+ INSERT INTO Cust_Table VALUES (1000, 'Allen', '#115 Chicago', '#115 Chicago', 'M', 25, 7878776);
+ INSERT INTO Cust_Table VALUES (1001, 'George', '#116 France', '#116 France', 'M', 25, 434524);
+ INSERT INTO Cust_Table VALUES (1002, 'Becker', '#114 New York', '#114 New York', 'M', 45, 431525);
+
+
+4.1.5
+
+ ALTER TABLE Cust_Table
+ ADD CONSTRAINT CustId_Prim PRIMARY KEY(CustomerId);
+
+
+4.1.6
+
+
+ INSERT into Cust_Table VALUES(1002, 'John', '#114 Chicago', '#114 Chicago', 'M', 45, 439525);
+ 
+ ERROR at line 1:
+ ORA-00001: unique constraint (SYSTEM.CUSTID_PRIM) violated
+
+
+4.1.7
+
+ ALTER TABLE Cust_Table DISABLE CONSTRAINT CustId_Prim;
+
+ INSERT INTO Cust_Table VALUES(1002, 'Becker', '#114 New York', '#114 New york' , 'M', 45, 431525);
+ INSERT INTO Cust_Table VALUES(1003, 'Nanapatekar', '#115 India', '#115 India' , 'M', 45, 431525);
+
+
+4.1.8
+
+ ALTER table Cust_Table ENABLE CONSTRAINT CustId_Prim;
+
+ ERROR at line 1:
+ ORA-02430: cannot enable constraint (CUSTID_PRIM) - no such constraint
+
+
+4.1.9
+
+ ALTER Table Cust_Table drop CONSTRAINT CustId_Prim;
+
+ INSERT INTO Cust_Table VALUES(1002, 'Becker', '#114 New York', '#114 New york' , 'M', 45, 431525, 15000.50);
+ INSERT INTO Cust_Table VALUES(1003, 'Nanapatekar', '#115 India', '#115 India' , 'M', 45, 431525, 20000.50);
+
+ ERROR at line 1:
+ ORA-00913: too many values
+
+
+4.1.10
+
+ TRUNCATE TABLE Cust_Table;
+ 
+
+4.1.11
+
+ ALTER TABLE Cust_Table
+ ADD E_mail varchar2(20);
+
+
+4.1.12
+
+ ALTER table Cust_Table drop column E_mail;
+
+
+4.1.13
+
+ CREATE TABLE Suppliers AS SELECT Customerid AS SuppID, CustomerName AS SName, Address1 AS Addr1, Address2 AS Addr2, phoneno AS Contactno
+ FROM Cust_Table;
+
+
+4.1.14
+
+ DROP TABLE Suppliers;
+ CREATE TABLE CustomerMaster(
+ CustomerId Number(5) CONSTRAINT CustId_PK Primary key,
+ CustomerName Varchar2(30) Not Null,
+ Addressl Varchar2(30) Not Null,
+ Address2 Varchar2(30),
+ Gender Varchar2(1),
+ Age Number(3),
+ PhoneNo Number(10));
+
+
+4.1.15
+
+ CREATE TABLE AccountsMaster(
+ Account number,
+ CustomerId Number(5),
+ AccountNumber Number(10,2) constraint Acc_PK Primary key,
+ AccountType Char,
+ LedgerBalance Number(10,2) Not Null);
+
+
+4.1.16
+
+ ALTER table AccountMaster
+ ADD constraint cust_acc foreign key(customerId) references CustomerMaster(customerId);
+ 
+
+4.1.17
+
+ INSERT INTO CustomerMaster VALUES( 1000, 'Allen', '#115 Chicago', '#115 Chicago', 'M', 25, 7878776);
+ INSERT INTO CustomerMaster VALUES(1001, 'George', '#116 France', '#116 France', 'M', 25, 434524);
+ INSERT INTO CustomerMaster VALUES(1002, 'Becker', '#114 New York', '#114 New York', 'M', 45, 431525);
+
+
+4.1.18
+
+ ALTER TABLE AccountMaster
+ ADD check(Accounttype = 'NRI' or Accounttype = 'IND');
+
+
+4.1.19
+
+ ALTER TABLE AccountMaster
+ ADD constraint Balance_Check check(ledgerbalance > 5000);
+
+
+4.1.20
+
+ ALTER TABLE Cust_Table
+ ADD PRIMARY KEY (CustomerId);
+
+ ALTER TABLE AccountMaster
+ ADD FOREIGN KEY (CustomerId) REFERENCES Cust_Table(CustomerId)
+ ON DELETE CASCADE;
+
+
+4.1.21
+
+ CREATE TABLE AccountDetails
+ AS SELECT * FROM AccountsMaster;
+
+
+4.1.22
+
+ CREATE VIEW Acc_view AS
+ SELECT CustomerId AS CustomerCode, CustomerName AS AccountHolderName,
+ AccountNumber AS AccountNumber, AccountType AS Type,LedgerBalance AS Balance
+ FROM AccountsMaster NATURAL JOIN Cust_Table;
+
+
+4.1.23
+
+ CREATE VIEW vAccs_Dtls AS
+ SELECT * FROM AccountsMaster
+ WHERE AccountType = 'IND' AND LedgerBalance >= 10000;
+
+
+4.1.24
+
+ CREATE view accsvw10 as select * from AccountsMaster with read only;
+
+
+4.1.25
+
+ CREATE SEQUENCE seq_Dept
+ start with 40
+ MAXVALUE 200
+ INCREMENT BY 10
+ CACHE 40;
+
+ INSERT INTO department_master(dept_code)
+ VALUES(seq_dept.NEXTVAL);
+
+
+4.1.26
+
+ INSERT INTO Department_master(dept_code,dept_name)
+ values(seq_dept.NEXTVAL,'EXTC');
+ INSERT INTO Department_master(dept_code,dept_name)
+ values(seq_dept.NEXTVAL,'IT');
+
+ INSERT INTO Department_master(dept_code,dept_name)
+ values(seq_dept.NEXTVAL,'COMP');
+
+4.1.27
+
+ DROP SEQUENCE seq_dept;
+
+4.1.28
+
+ create index no_name on emp(empno);
+
+4.1.29
+
+ create synonym synEmp for emp;
+
+4.1.30
+
+ select * from synEmp;
+
+4.1.31
+
+ create index IDX_EMP_HIREDATE on emp(HIREDATE);
+
+4.1.32
+
+ CREATE SEQUENCE seq_emp
+ minvalue 1001
+ start with 1001
+ increment by 1
+ cache 1001;
+ INSERT INTO emp(empno) VALUES(seq_emp.nextval);
+
+
+

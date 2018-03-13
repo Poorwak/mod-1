@@ -1,0 +1,19 @@
+1.1.1
+
+
+Line 1: No Error
+Line 2: CONSTANT value must be INITIALIZED
+Line 3: variable value NOT NULL must be INITIALIZED
+Line 4: No Error
+Line 5: No Error
+
+
+DECLARE
+V_Sample1 NUMBER(2);
+V_Sample2 CONSTANT NUMBER(2) := 10 ;
+V_Sample3 NUMBER(2) NOT NULL := 15;
+V_Sample4 NUMBER(2) := 50;
+V_Sample5 NUMBER(2) DEFAULT 25;
+
+
+

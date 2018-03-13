@@ -1,0 +1,24 @@
+3.4
+
+create or replace function update_staff(s_code number) 
+return number as 
+	salary number;
+	exp number;
+BEGIN
+
+	select staff_sal, 
+	extract(year from sysdate)-extract(year from hiredate)
+	into salary, exp from staff_master
+	where s_code = staff_code;
+
+	if exp > 2 and exp < 5 then 
+		salary := salary + .2*salary;
+	elsif exp > 5 then
+		salary := salary + .25*salary;
+	end if;
+
+	update staff_master set staff_sal = salary
+	 where s_code = staff_code;
+
+END update_staff;
+/

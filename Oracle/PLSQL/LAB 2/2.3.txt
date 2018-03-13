@@ -1,0 +1,23 @@
+2.3
+
+DECLARE
+
+	emp_comm emp.comm%type;
+	no_record_found EXCEPTION ;
+
+BEGIN
+
+	select comm into emp_comm from emp where empno = 7369;
+
+	if emp_comm is null then
+		raise no_record_found;
+	else
+		DBMS_OUTPUT.PUT_LINE('Commission is: ' || emp_comm);
+	end if;
+
+	EXCEPTION
+		WHEN no_record_found THEN
+		DBMS_OUTPUT.PUT_LINE('No record exists.');
+		
+END;
+/

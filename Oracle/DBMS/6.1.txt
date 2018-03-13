@@ -1,0 +1,54 @@
+6.1.1
+
+ INSERT INTO Cust_table 
+ VALUES(&CustomerId,'&CustomerName','&Address1','&Address2','&Gender',&Age,&PhoneNo,&Cust_Sal);
+ 
+ Enter value for CustomerId: 6000
+ Enter value for CustomerName: John
+ Enter value for Address1: #115 Chicago
+ Enter value for Address2: #115 Chicago
+ Enter value for Gender: M
+ Enter value for Age: 25
+ Enter value for PhoneNo:7878776
+ Enter value for Cust_Sal: 10000
+
+
+ INSERT INTO Cust_table 
+ VALUES(&CustomerId,'&CustomerName','&Address1','&Address2','&Gender',&Age,&PhoneNo,&Cust_Sal);
+ 
+ Enter value for CustomerId: 6001
+ Enter value for CustomerName: Jack
+ Enter value for Address1: #116 France
+ Enter value for Address2: #116 France
+ Enter value for Gender: M
+ Enter value for Age: 25
+ Enter value for PhoneNo:434524
+ Enter value for Cust_Sal:  20000
+
+
+ INSERT INTO Cust_table 
+ VALUES(&CustomerId,'&CustomerName','&Address1','&Address2','&Gender',&Age,&PhoneNo,&Cust_Sal);
+ 
+ Enter value for CustomerId: 6002
+ Enter value for CustomerName: James
+ Enter value for Address1: #114 New York
+ Enter value for Address2: #114 New York
+ Enter value for Gender: M
+ Enter value for Age: 45
+ Enter value for PhoneNo:431525
+ Enter value for Cust_Sal:  15000.50
+
+
+6.1.2  
+
+ SAVEPOINT SP1;
+
+
+6.1.3  
+ INSERT INTO Cust_table 
+ VALUES(6003, 'John', '#114 Chicago', '#114 Chicago', 'M', 45, 439525, 19000.60);
+
+
+6.1.4 
+ ROLLBACK TO SP1;
+

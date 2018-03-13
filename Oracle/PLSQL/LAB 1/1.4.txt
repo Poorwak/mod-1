@@ -1,0 +1,12 @@
+1.1.4
+
+DECLARE 
+	emp_rec emp%rowtype;
+
+BEGIN	
+	select * into emp_rec from emp where ename = '&ename';
+	
+	DBMS_OUTPUT.PUT_LINE( emp_rec.ename || ' ' || emp_rec.empno || ' ' || emp_rec.sal || ' ' || emp_rec.hiredate 
+	|| ' ' || emp_rec.comm || ' ' || emp_rec.job || ' ' || emp_rec.mgr);
+END;
+/

@@ -1,0 +1,15 @@
+3.2
+
+create or replace procedure staff_details(s_code out number,
+ s_name out varchar, d_code out number,
+ mgr_name out varchar ) 
+as 
+
+BEGIN
+
+	select s.staff_code, s.staff_name, s.dept_code, m.staff_name
+	into s_code, s_name, d_code, mgr_name from staff_master s,
+	staff_master m where s.staff_code = m.mgr_code;
+
+END staff_details;
+/

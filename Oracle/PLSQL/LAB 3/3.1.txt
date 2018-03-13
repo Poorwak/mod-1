@@ -1,0 +1,10 @@
+3.1
+
+create or replace function get_date(d_date date) 
+return number as 
+
+BEGIN
+
+	return extract(year from d_date);
+
+END get_date;

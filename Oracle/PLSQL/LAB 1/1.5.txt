@@ -1,0 +1,38 @@
+1.1.5
+
+DECLARE
+	empsalary staff_master.staff_sal%type;
+	edept_code staff_master.dept_code%type;
+	ecode staff_master.staff_code%type;
+	
+	esal number(10,3);
+
+	CURSOR C_empsal IS 
+	SELECT dept_code,staff_sal FROM staff_master;
+BEGIN
+	IF NOT C_empsal%ISOPEN THEN
+		OPEN C_empsal;
+	END IF;
+	
+	LOOP
+	FETCH c_empsal INTO edept_code,empsalary;
+	EXIT 
+	WHEN C_empsal%NOTFOUND;
+
+	esal := 0.30 * empsalary;
+	
+	IF (esal < 5000) THEN
+
+		UPDATE staff_master SET 
+		staff_sal = 0.30* empsalary + empsalary
+		WHERE dept_code = edept_code;
+	ELSE 
+		UPDATE staff_master SET 
+		staff_sal = empsalary + 5000
+		WHERE dept_code = edept_code;
+	END IF;
+	END LOOP;
+	CLOSE C_empsal;
+END;
+/
+		

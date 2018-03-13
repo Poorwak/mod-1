@@ -1,0 +1,22 @@
+1.1.2
+
+
+DECLARE --outer block
+	var_num1 NUMBER := 5;
+BEGIN
+
+	DECLARE --inner block
+	
+		var_num1 NUMBER := 10;
+	
+	BEGIN
+		DBMS_OUTPUT.PUT_LINE('Value for var_num1:' ||var_num1);
+		--Can outer block variable (var_num1) be printed here.IfYes,Print the same. (NO)
+	END;
+		DBMS_OUTPUT.PUT_LINE(var_num1);
+		--Can inner block variable(var_num1) be printed here.IfYes,Print the same. (NO)
+END;
+/
+
+Value for var_num1:10
+5

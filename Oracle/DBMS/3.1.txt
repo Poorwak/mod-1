@@ -1,0 +1,103 @@
+3.1.1
+
+ SELECT staff_name, staff_sal, dept_name
+ FROM staff_master, department_master
+ WHERE staff_master.dept_code = department_master.dept_code
+ AND staff_sal > 20000;
+
+
+
+3.1.2
+
+  SELECT staff.staff_code AS staff#, staff.staff_name AS staff, mgr.staff_code AS mgr#, mgr.staff_name AS manager, dept.dept_name
+  FROM staff_master staff, staff_master mgr NATURAL JOIN department_master dept
+  WHERE staff.mgr_code = mgr.staff_code;
+
+
+
+3.1.3
+
+ SELECT s.student_code, s.student_name, b.book_code, b.book_name
+ FROM student_master s, book_master b, book_transactions bt
+ WHERE s.student_code = bt.student_code
+ AND b.book_code = bt.book_code
+ AND bt.book_expected_return_date = sysdate;
+
+
+
+3.1.4
+
+ SELECT staff_master.staff_code,staff_name,dept_name, design_name, book_master.book_code,book_master.book_name,book_issue_date
+ FROM staff_master,department_master,book_transactions,book_master,designation_master
+ WHERE
+ staff_master.dept_code = department_master.dept_code and book_transactions.book_code = book_master.book_code and
+ staff_master.design_code = designation_master.design_code and staff_master.staff_code = book_transactions.staff_code and extract(day from sysdate)- extract(day from book_issue_date) <=30;
+
+
+3.1.5
+
+ SELECT staff_code, staff_name, design_name, dept_name, 
+ book_code, book_name, book_pub_author,
+ (5*(book_actual_return_date - book_expected_return_date)) as fine
+ FROM staff_master NATURAL JOIN designation_master NATURAL JOIN department_master 
+ NATURAL JOIN book_master NATURAL JOIN book_transactions 
+ WHERE (5*(book_actual_return_date - book_expected_return_date)) > 0;
+
+
+3.1.6
+
+ SELECT staff_code, staff_name, staff_sal
+ FROM staff_master
+ WHERE staff_sal < (SELECT AVG(staff_sal) FROM staff_master);
+ 
+
+3.1.7
+
+ SELECT book_pub_author, book_name
+ FROM book_master
+ WHERE book_pub_author IN (SELECT book_pub_author FROM book_master
+ GROUP BY book_pub_author having count(book_pub_author) > 1);
+
+
+3.1.8
+
+ SELECT staff_code, staff_name, dept_name
+ FROM staff_master NATURAL JOIN department_master
+ WHERE staff_code IN (SELECT staff_code FROM book_transactions GROUP BY staff_code having count(book_code) > 1 );
+ 
+
+3.1.9
+
+ SELECT student_code, student_name, dept_name
+ FROM student_master NATURAL JOIN department_master
+ WHERE dept_code = (SELECT max(dept_code) FROM department_master);
+ 
+
+3.1.10
+
+ SELECT staff_code, staff_name, dept_name, design_name
+ FROM staff_master NATURAL JOIN department_master NATURAL JOIN designation_master
+ WHERE hiredate >= '01-OCT-2017';
+
+
+3.1.11
+
+ SELECT s.staff_name, count(s.staff_code) as "TEAM STRENGTH"
+ FROM staff_master s, staff_master m
+ WHERE m.mgr_code = s.staff_code
+ GROUP BY s.staff_name;
+
+
+3.1.12
+
+ SELECT * FROM book_master
+ WHERE book_code IN (SELECT book_code FROM book_transactions
+ where book_expected_return_date = NEXT_DAY(sysdate-14, 'Monday')
+ AND book_actual_return_date=null);
+
+
+3.1.13
+
+ SELECT dept_code, dept_name, staff_code AS Number_of_People
+ FROM department_master NATURAL JOIN staff_master
+ WHERE staff_code = (SELECT count(staff_code) FROM staff_master);

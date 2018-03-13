@@ -1,0 +1,29 @@
+3.3
+
+create or replace function company_cost(staff_code number) 
+return number as 
+	salary number;
+	exp number;
+BEGIN
+
+	select staff_sal into salary from staff_master;
+
+	-- dbms_output.put_line(salary);
+	salary := salary + .15*salary + .2*salary + .08*salary;
+
+	select extract(year from sysdate) - extract(year from hiredate)
+	into exp from staff_master;
+
+	if exp >= 1 and exp < 2 then
+
+		salary := salary + .1*salary;
+	elsif exp >=2 and exp < 4 then 
+
+		salary := salary + .2*salary;
+	elsif exp > 4 then
+
+		salary := salary + .3*salary;
+	end if;
+
+END company_cost;
+/
