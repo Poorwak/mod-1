@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<EmployeeList>	
+	<Employee ee_code="1111">
+	
+		<empName>
+			<FirstName>Seema</FirstName>
+			<LastName>Dalvi</LastName>
+		</empName>
+		
+		<DOJ>09/08/97</DOJ>
+		
+		<TotalExperience>12</TotalExperience>
+		
+		<Department>
+			<Unit>3d</Unit>
+			<loc>Mumbai</loc>
+		</Department>
+		
+		<Designation>4</Designation>
+		
+		<Sal>21000</Sal>
+		
+		<Grade>b</Grade>
+	</Employee>
+	
+		
+	<Employee ee_code="222">
+	
+		<empName>
+			<FirstName>Bharti</FirstName>
+			<LastName>Mantri</LastName>
+		</empName>
+		
+		<DOJ>12/01/99</DOJ>
+		
+		<TotalExperience>5</TotalExperience>
+		
+		<Department>
+			<Unit>4a</Unit>
+			<loc>Pune</loc>
+		</Department>
+		
+		<Designation>2</Designation>
+		
+		<Sal>12000</Sal>
+		
+		<Grade>a</Grade>
+	</Employee>
+	
+</EmployeeList>

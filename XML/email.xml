@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<eDetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="email.xsd">
+<Email>
+		<To>xyz@gmail.com</To>
+		<From>abc@gmail.com</From>
+		<CC>pqr@gmail.com</CC>
+		<BCC>def@gmail.com</BCC>
+		<Subject>Learning Modules of XML</Subject>
+		<Body>XML is the EXtensible Markup Language.</Body>
+</Email>
+</eDetails>

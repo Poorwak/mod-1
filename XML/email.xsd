@@ -1,0 +1,28 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+		<xs:element name="To" type="xs:string"/>
+		<xs:element name ="From" type="xs:string"/>
+		<xs:element name ="CC" type="xs:string"/>
+		<xs:element name ="BCC" type="xs:string"/>
+		<xs:element name ="Subject" type="xs:string"/>
+		<xs:element name="Body" type="xs:string"/>
+		<xs:element name="Email" type="emType"/>
+		
+		<xs:complexType name="emType">
+			<xs:sequence>	
+				<xs:element ref="To"/>
+				<xs:element ref="From"/>
+				<xs:element ref="CC"/>
+				<xs:element ref="BCC"/>
+				<xs:element ref="Subject"/>
+				<xs:element ref="Body"/>
+			</xs:sequence>
+		</xs:complexType>
+		
+		<xs:element name="eDetails" type="elistType"/>
+		<xs:complexType name="elistType">
+			<xs:sequence>
+				<xs:element ref="Email" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+</xs:schema>

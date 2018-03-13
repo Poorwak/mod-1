@@ -1,0 +1,64 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+		<xs:element name="empNo" type="xs:integer">
+		<xs:element name="eName" type="eNameType"/>
+		<xs:element name="job" type="jobType">
+		<xs:element name="mgr" type="xs:integer"/>
+		<xs:element name="hiredate" type="xs:date"/>
+		<xs:element name="sal" type="salType"/>
+		<xs:element name="comm" type="commType"/>
+		<xs:element name="deptno" type="xs:integer"/>
+		<xs:element name="Employee" type="empType"/>
+		
+		<xs:simpleType name="jobType">
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="PRESIDENT"/>
+				<xs:enumeration value="CLERK"/>
+				<xs:enumeration value="MANAGER"/>
+				<xs:enumeration value="ANALYST"/>
+				<xs:enumeration value="SALESMAN"/>
+			</xs:restriction>
+		</xs:simpleType>
+		
+		<xs:simpleType name="eNameType">
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[A-Z][A-Za-z]{2,}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	    
+		<xs:simpleType name="salType">
+			<xs:restriction base="xs:double">
+				<xs:minInclusive value="1000"/>
+				<xs:maxInclusive value="10000"/>
+			</xs:restriction>
+		</xs:simpleType>
+		
+		<xs:simpleType name="commType">
+			<xs:restriction base="xs:double">
+				<xs:minInclusive value="200"/>
+				<xs:maxInclusive value="30000"/>
+			</xs:restriction>
+		</xs:simpleType>
+		
+		<xs:complexType name="empType">
+			<xs:sequence>	
+				<xs:element ref="empNo"/>
+				<xs:element ref="eName"/>
+				<xs:element ref="job"/>
+				<xs:element ref="mgr"/>
+				<xs:element ref="hiredate"/>
+				<xs:element ref="sal"/>
+				<xs:element ref="comm"/>
+				<xs:element ref="deptno"/>
+			</xs:sequence>
+			<xs:attribute name="empno" type="xs:integer" use="required"/>
+		</xs:complexType>
+		
+		<xs:element name="EmployeeDetails" type="elistType"/>
+		<xs:complexType name="elistType">
+			<xs:sequence>
+				<xs:element ref="Employee" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+
+</xs:schema>
