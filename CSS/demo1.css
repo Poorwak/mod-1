@@ -1,0 +1,41 @@
+h1{
+	color:grey;
+	font-family:jokerman;
+	font-style:normal;
+	font-size:300px;
+	text-align:center;
+	text-shadow:5px 5px 5px red;
+	background-image: url('Tulips.jpg');
+	background-repeat: repeat; 
+	background-attachment: scroll;
+	border-color:black;
+	border-style:dotted;
+}
+
+p{
+	color:blue;
+	text-align:center;
+	text-decoration:overline;
+	text-transform:uppercase;
+}
+.one{
+	color:maroon;
+}
+
+#div1{
+	color:yellow;
+}	
+
+div{
+	color:green;
+	text-decoration:underline;
+	text-indent:50px;
+}	
+
+[class]{
+	border: 5px solid red;
+}	
+
+p:hover,div:hover{
+	background-color:cyan;
+}	
