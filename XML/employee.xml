@@ -1,0 +1,16 @@
+<?xml version ="1.0"?>
+<EmployeeList
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="employee.xsd">
+	<Employee empno="1001">
+		<empName>Smith</empName>
+		<sal>2000</sal>
+		<dept>HR</dept>
+	</Employee>	
+	
+	<Employee empno="1002">
+		<empName>Mary</empName>
+		<sal>4000</sal>
+		<dept>SALES</dept>
+	</Employee>
+</EmployeeList>	

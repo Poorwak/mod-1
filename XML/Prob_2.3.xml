@@ -1,0 +1,28 @@
+<Library >
+	<Book>
+		<Title>Dead to the World </Title>
+		<Author>Charlaine Harris </Author>
+		<Publisher>ABC Publishing company</Publisher>
+		<Cover cover_type="Hardbook"></Cover>
+		<Category cat_type="Horror"></Category>
+		<ISBN isbn_num="Z1"></ISBN>
+		<Rating rate_Val="5"></Rating>
+		<Price>$13.97 </Price>
+		<Comments>A good book</Comments>
+	</Book>
+	
+	<Book>
+
+		<Title>Gardens of the Moon </Title>
+		<Author>Steven Erikson</Author>
+		XML
+		Page 13 of 29
+		<Publisher>XYZ Publishers</Publisher>
+		<Cover cover_type="Hardbook"></Cover>
+		<Category cat_type="SCI‐FI"></Category>
+		<ISBN isbn_num="Z3"></ISBN>
+		<Rating rate_Val="4"></Rating>
+		<Price>$17.65</Price>
+		<Comments>A wonderful book</Comments>
+	</Book>
+</Library>
