@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function startCounter(){
+	x=setInterval('increment()',100);
+}
+function stopCounter(){
+	clearInterval(x);
+}
+function increment(){
+	var val=frm1.txtNum.value;
+	frm1.txtNum.value=++val;
+}
+</script>	
+<h1> Window Demo </h1>
+<form name="frm1">
+
+Enter a number:
+<input type="number" name="txtNum"/>
+<input type="button" onclick="startCounter()" value="Start"/>
+<input type="button" onclick="stopCounter()" value="Stop"/>
+</form>
+</body>
+</html>	

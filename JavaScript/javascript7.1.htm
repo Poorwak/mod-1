@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+	function validate()
+	{
+		 var qty1 = frm1.Qty1.value;
+		 var qty2 = frm1.Qty2.value;
+		 var qty3 = frm1.Qty3.value;
+		 var qty4 = frm1.Qty4.value;
+		
+		if(qty1 == "" || qty2.length == "" || qty3.length == "" || qty4.length == "")
+		{
+			alert("no item selected");
+			return false;
+		}
+	}
+	function inVoice()
+	{
+		var win = window.open();
+	    var qty = frm1.Qty1.value;
+		var total = qty * 10;
+		win.document.write("<h1 align=center>INVOICE</h1>");
+		win.document.write(" <table border=1 align=center> <tr><td><b>Product<b></td><td> <b>Quantity</b></td><td> <b>PRICE</b></td><td><b> Total</b></td></tr>");
+		win.document.write("  <tr><td> Barbie Doll</td><td>"+qty);
+		win.document.write("</td><td> 10</td> <td>"+ total+"</td></tr></table>");
+		
+	}
+	
+		
+	</script>
+</head>
+<body  bgcolor="cyan">
+<h1> PRODUCTS</h1>
+<form id="frm1"> <!--onsubmit="validate()"--> 
+<table border="1" style="border-color:white">
+<tr>
+		<td> Name</td>
+		<td> Description</td>
+		<td> Price</td>
+		<td> Qty</td>
+</tr>
+<tr>
+		<td> Barbie Doll</td>
+		<td> Beautiful</td>
+		<td> 20</td>
+		<td> <input type="text" name="Qty1"></td>
+</tr>
+<tr>
+		<td> Calculator</td>
+		<td> Calculator with latest features</td>
+		<td> 30</td>
+		<td> <input type="text" name="Qty2"></td>
+</tr>
+<tr>
+		<td> Mobile Phone</td>
+		<td> Camera,Java,Games,GPRS</td>
+		<td> 40</td>
+		<td> <input type="text" name="Qty3"></td>
+</tr>
+<tr>
+		<td> LG DVD</td>
+		<td> 5 disc changer</td>
+		<td> 50</td>
+		<td> <input type="text" name="Qty4"></td>
+</tr>
+</table>
+<input type="button" value="validate" onclick="validate()">
+<input type="submit" value="ORDER" onclick="inVoice()" >
+ </form>
+</body>
+</html>

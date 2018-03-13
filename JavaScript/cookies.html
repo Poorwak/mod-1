@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>	
+<script>
+	function saveCookie(){
+	var cName = frm1.txtCName.value;
+	var cVal = frm1.txtCVal.value;
+	document.cookie = cName+"="+cVal;
+	}
+	
+	function readCookie(){
+	alert(document.cookie);
+	}	
+</script>
+<form name ="frm1">
+
+Enter Cookie Name:
+<input type="text" name="txtCName"/><br/>
+
+Enter Cookie Value:
+<input type="text" name="txtCVal"/><br/>
+<input type="button" value="Save Cookie" onclick="saveCookie()"/>
+<input type="button" value="Read Cookie" onclick="readCookie()"/>
+</form>
+</body>
+</html>	

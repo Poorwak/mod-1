@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>	
+<script>
+	function validate(){
+	var uname = frm1.txtuname.value;
+	var pass = frm1.txtpass.value;
+	var cpass = frm1.txtcpass.value;
+	if(pass!=cpass){
+		alert("Password and Retype password should be same.");
+		return false;
+	}
+	else{
+	alert(uname +" logged successfully");
+	return true;
+	}
+}	
+</script>
+<form name ="frm1" onsubmit="return validate()">
+
+Enter Your Name:
+<input type="text" name="txtuname" required pattern="[A-Z]{1}[a-z]{2}[0-9]{3}" title="Aaa123"/><br/>
+
+Enter Password:
+<input type="password" name="txtpass" minlength="6" title="minimum 6 characters are required"/><br/>
+
+ReType Password:
+<input type="password" name="txtcpass"/><br/>
+<input type="submit" value="submit"/>
+</form>
+</body>
+</html>	

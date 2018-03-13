@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+	var myArr = new Array("Six","Seven","Eight");
+	myArr[myArr.length]="One";
+	myArr[myArr.length]="Two";
+	myArr[myArr.length]="Three";
+	myArr[myArr.length]="Four";
+	myArr.reverse();
+	
+	
+	for(i=0;i<myArr.length;i++){
+		document.write("<br/>"+myArr[i]);
+	}
+	myArr=myArr.concat([77,33]);
+	
+	document.write("<br/>"+myArr.join(','));
+	
+	
+</script>	
+<h1> Array Demo </h1>
+</body>
+</html>	

@@ -1,0 +1,9 @@
+<!DOCTYPE>
+<html>
+<body>
+<script>
+	document.write("Message from JavaScript<br/>")
+</script>
+<h1>javaScript Demo</h1>
+</body>
+</html>	

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>	
+<script src="validate.js"></script>
+<form name ="frm1" onsubmit="return validate()">
+
+Enter your Name:
+<input type="text" name="txtUname"/><br/>
+
+Enter date of birth:
+<input type="date" name="dob"/><br/>
+
+
+
+Select State:
+<select name ="state" onchange="populateCity()">
+	<option value="None">Select State</option>
+	<option value="MH">Maharashtra</option>
+	<option value="KA">Karnataka</option>
+	<option value="UP">Uttar Pradesh</option>
+</select><br/>	
+
+Select City:
+<select name ="city">
+<option>Select City</option>
+</select><br/>
+<input type ="submit" value="Submit" onclick="validateDOB()"/><br/>
+
+</form>
+</body>
+</html>	

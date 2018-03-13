@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>	
+<script>
+	function myfunction(){
+	var pArr = document.getElementsByTagName("p");
+	for(i=0;i<pArr.length;i++){
+	alert(pArr[i].innerText);
+	//pArr[i].innerText="<b>Capgemini </b>"+pArr[i].innerText;
+	pArr[i].innerHTML="<b>Capgemini </b>"+pArr[i].innerText;
+	}
+	}
+</script>
+<input type="button" value="Go" onclick="myfunction()"/>
+<h1> Document Demo </h1>
+<p id="p1">Para 1</p>
+<p class="one">Para 2</p>
+<p id="p3">Para 3</p>
+<p class="one">Para 4</p>
+<div class="one" name="pr">Div1</div>
+<p name="pr">Para 4</p>
+</body>
+</html>	
