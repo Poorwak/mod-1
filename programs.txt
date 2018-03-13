@@ -1,0 +1,323 @@
+DECLARE 
+	emp_rec emp%rowtype;
+BEGIN
+	select * into emp_rec
+	from emp
+	where empno = 7369;
+
+	dbms_output.put_line(emp_rec.empno);
+END;
+/
+
+_______________________________________________________________________________________________
+
+
+DECLARE
+	emp_rec emp%rowtype;
+BEGIN
+	select * into emp_rec
+	from emp
+	where empno = 7369;
+
+	IF emp_rec.empno = 7369
+	THEN
+		
+		emp_rec.sal := emp_rec.sal + 500;
+	
+		update emp set ename = emp_rec.ename,
+		sal = emp_rec.sal
+		WHERE empno = 7369;
+
+		dbms_output.put_line(emp_rec.sal);
+	END IF;
+END;
+/
+
+
+
+_______________________________________________________________________________________________
+
+
+ DECLARE
+ 	TYPE book_rec_type IS RECORD (
+ 	book_code number(6),
+ 	book_title varchar2(40),
+ 	book_price number(7,2)
+ 	);
+
+	id number(4);
+	book_rec book_rec_type;
+BEGIN
+	book_rec.book_code := 2343;
+	
+	dbms_output.put_line(book_rec.book_code);
+END;
+/
+
+_______________________________________________________________________________________________
+
+
+
+DECLARE 
+	Day varchar2(4) := TO_CHAR(sysdate, 'DY');
+BEGIN
+	case day 
+	
+	WHEN 'SAT' THEN 
+		dbms_output.put_line('Enjoy your Weekend');
+
+	WHEN 'SUN' THEN 
+		dbms_output.put_line('Enjoy your party');
+	
+	ELSE
+		dbms_output.put_line('Have a nice day');
+	END CASE;
+END;
+/
+
+_________________________________________________________________
+
+drop table multiplicationtable;
+
+create table multiplicationtable (value number(4));
+
+DECLARE
+	counter number(3) := 1;
+	num number(3) := 4;
+BEGIN
+	Loop
+	
+		insert into multiplicationtable values( num * counter);
+
+		counter := counter + 1;
+
+		--IF counter > 10 THEN
+			--EXIT;
+		--END IF;
+		
+		EXIT WHEN counter > 10;
+	END Loop;
+END;
+/
+
+_____________________________________________________________________________________
+
+drop table multiplicationtable;
+
+create table multiplicationtable (value number(4));
+
+DECLARE
+	counter number(3) := 1;
+	num number(3) := 5;
+BEGIN
+	while counter <= 10
+	Loop
+	
+		insert into multiplicationtable 
+		values( num * counter);
+
+		counter := counter + 1;
+
+	END Loop;
+END;
+/
+
+
+_________________________________________________________________________________
+
+
+
+DECLARE
+	V_Salary emp.sal%TYPE;
+	V_Empno emp.empno%TYPE;
+	CURSOR C_Empsal IS
+	SELECT empno, sal FROM emp WHERE sal
+	<2500;
+BEGIN
+	IF NOT C_Empsal%ISOPEN THEN
+		OPEN C_Empsal ;
+	END IF ;
+	LOOP
+	FETCH C_Empsal INTO V_Empno,V_Salary;
+	EXIT WHEN C_Empsal %NOTFOUND ;
+		--Exit out of block when no rows
+	UPDATE emp SET sal = 1.1 * V_Salary
+	WHERE empno = V_Empno;
+	END LOOP ;
+	CLOSE C_Empsal ;
+	COMMIT ;
+END ;
+/
+___________________________________________________
+	
+CREATE TABLE EligibleCandidates (
+	emp_code number(4),
+	emp_name varchar2(20),
+	experience_in_years number(4));
+
+
+DECLARE
+
+	v_code staff_master.staff_code%TYPE;
+	v_name staff_master.staff_name%TYPE;
+	v_expdate staff_master.hiredate%TYPE;
+	exp Eligiblecandidates.experience_in_years%TYPE;
+
+	CURSOR C_EligibleCand IS
+	SELECT staff_code, staff_name, hiredate FROM staff_master;
+BEGIN
+	IF NOT C_EligibleCand%ISOPEN THEN
+		OPEN C_Empsal ;
+	END IF ;
+
+	WHILE
+	LOOP
+		FETCH C_EligibleCand INTO v_code, v_name, v_hdate;
+	
+	EXIT WHEN C_Eligiblecand %NOTFOUND ;
+
+
+____________________________________________________
+
+drop table performace cascade constarint;
+
+create table performance(
+	student_code number(6) primary key,
+	totalmarks number(4) not null
+);
+
+--PLSQL below
+
+DECLARE
+	total number(4) := 0;
+	stu_rec student_marks%rowtype;
+	CURSOR stu_cur is select * from student_marks WHERE student_year = 2010;
+BEGIN
+	IF NOT stu_cur%ISOPEN THEN
+		OPEN stu_cur;
+	END IF;
+
+	LOOP
+		FETCH stu_cur INTO stu_rec;
+
+		EXIT WHEN stu_cur%NOTFOUND;
+
+		total := stu_rec.subject1 + stu_rec.subject2 + stu_rec.subject3;
+
+		IF total > 220 THEN
+			insert into performance values(
+			stu_rec.student_code, total);
+		END IF;
+
+	END LOOP;
+
+	CLOSE stu_cur;
+
+	commit;
+END;
+/
+
+________________________________________________________________________________________________
+
+
+create or replace procedure greetings
+as 
+BEGIN
+
+	dbms_output.put_line('Hello World');
+
+END greetings;
+/	
+
+
+
+BEGIN
+	greetings;
+END;
+/
+
+
+______________________________________________________________________________________________
+
+create or replace procedure greetings(name in varchar)
+as 
+BEGIN
+
+	dbms_output.put_line('Hello ' || name);
+
+END greetings;
+/	
+
+
+//=====================================================
+
+
+BEGIN
+	greetings('John');
+END;
+/
+
+_______________________________________________________________________________________________
+
+create or replace procedure addition(
+num1 in number, num2 in number, result out number) as
+BEGIN
+	result := num1 + num2;
+END addition;
+/
+
+//==================
+
+DECLARE
+	n1 number := 12;
+	n2 number := 5;
+	sum1 number := 0;
+BEGIN
+	addition (n1, n2, sum1);
+	dbms_output.put_line(sum1);
+END;
+/
+
+______________________________________________________________________________________________
+
+create or replace function getmax(
+num1 in number, num2 in number)
+return number
+is 
+	maxvalue number;
+BEGIN
+	IF num1 > num2 THEN
+		maxvalue := num1;
+	ELSE
+		maxvalue := num2;
+	END IF;
+
+	return maxvalue;
+
+END getmax;
+/
+
+
+DECLARE
+	maxvalue number;
+BEGIN
+	maxvalue := getmax(12, 45);
+
+	dbms_output.put_line(maxvalue);
+END;
+/
+	
+
+
+select student_code, subject1, subject2, subject3, 
+getmax(subject1, getmax(subject2, subject3)) 
+"Max Score" from student_marks;
+
+
+
+SQL> variable result number;
+SQL> execute :result := getmax(12,3);
+
+PL/SQL procedure successfully completed.
+
+SQL> print result;
