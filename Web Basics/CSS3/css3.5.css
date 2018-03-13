@@ -1,0 +1,107 @@
+#p1
+
+{
+	text-align:right;
+	text-decoration:underline;
+	text-indent:50px;
+	text-transform:capitalize;
+	text-shadow:5px 5px 5px red;
+	color:blue;
+	word-wrap:break-word;
+	font-family:Times New Roman;
+	font-style:italic;
+	font-size:35px;
+}
+
+
+#p2
+{
+	text-align:justify;
+	text-decoration:overline;
+	text-indent:40px;
+	text-transform:lowercase;
+	text-shadow:5px 5px 5px red;
+	color:black;
+	word-wrap:break-word;
+	font-family:Lucida Handwriting;
+	font-style:oblique;
+	font-size:40px;
+}
+
+#p3
+{
+	text-align:center;
+	text-decoration:line-through;
+	text-indent:50px;
+	text-transform:uppercase;
+	text-shadow:5px 5px 5px black;
+	color:blue;
+	font-family:Jokerman;
+	font-style:justify;
+	font-size:45px;
+}
+
+#p4
+{
+	text-align:center;
+	text-decoration:underline;
+	text-indent:60px;
+	text-transform:lowercase;
+	text-shadow:5px 5px 5px yellow;
+	color:magenta;
+	font-family:Old English Text MT;
+	font-style:normal;
+	font-size:50px;
+}
+
+#p5
+{
+	text-align:center;
+	text-decoration:underline;
+	text-indent:60px;
+	text-transform:lowercase;
+	text-shadow:5px 5px 5px blue;
+	color:red;
+	font-family:Curlz MT;
+	font-style:normal;
+	font-size:55px;
+}
+
+#d1
+{
+	text-align:center;
+	text-decoration:underline;
+	text-indent:60px;
+	text-transform:lowercase;
+	text-shadow:5px 5px 5px green;
+	color:red;
+	font-family:Gigi;
+	font-style:normal;
+	font-size:15px;
+}
+
+#d2
+{
+	text-align:justify;
+	text-decoration:underline;
+	text-indent:60px;
+	text-transform:lowercase;
+	text-shadow:5px 5px 5px red;
+	color:blue;
+	font-family:Jokerman;
+	font-style:oblique;
+	font-size:25px;
+}
+
+#d3
+{
+	text-align:center;
+	text-decoration:underline;
+	text-indent:60px;
+	text-transform:lowercase;
+	text-shadow:5px 5px 5px blue;
+	color:red;
+	font-family:Curlz MT;
+	font-style:normal;
+	font-size:30px;
+}

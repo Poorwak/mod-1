@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>Candidate Information</TITLE>
+	</HEAD>
+	
+	<BODY>
+		<h1 align="center">Candidate Information</h1>
+		<TABLE align="center" border="1" width="750px"  bgcolor="skyblue">
+			<tr>
+				<td>Name:<span style="color:red">*</span></td>
+				<td><input type="text" name="Name" required pattern="[A-Za-z]" size="15"></td>
+			</tr>
+			
+			<tr>
+				<td>Password:<span style="color:red">*</span></td>
+				<td><input type="password" name="Password" size="15"></td>
+			</tr>
+			
+			<tr>
+				<td>Phone number:<span style="color:red">*</span></td>
+				<td><input type="number" required pattern="[0-9]" id="number" name="Phone number" maxlength="10"></td>
+			</tr>
+			
+			<tr>
+				<td>Gender:<span style="color:red">*</span></td>
+				<td><input type="radio" name="Male">Male
+				<input type="radio" value="Female">Female<br></td>
+			</tr>
+			
+			<tr>
+				<td>Date of Birth:<span style="color:red">*</span></td>
+				<td><input type="date" name="Date of Birth"></td>
+			</tr>
+			
+			<tr>
+				<td>Email:<span style="color:red">*</span></td>
+				<td><input type="text" name="Email"></td>
+			</tr>
+			
+			<tr>
+				<td>Highest Qualification:<span style="color:red">*</span></td>
+				<td><select name="Qualification" id="Qualification">
+					<option value="Select Highest Qualification">Select Highest Qualification</option>
+					<option value="B.Tech">B.Tech</option>
+					<option value="M.Tech">M.Tech</option>
+					<option value="MBA">MBA</option>
+					<option value="MCA">MCA</option>
+					<option value="MSc">MSc</option>
+					<option value="MA">MA</option>
+					<option value="BSC">BSA</option>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>Courses Interested in:<span style="color:red">*</span></td>
+				<td><input type="checkbox" name="Java">Java
+				<input type="checkbox" value="HTML">HTML
+				<input type="checkbox" value="CSS 3">CSS 3
+				<input type="checkbox" value="Angular JS">Angular JS
+				<input type="checkbox" value="JQuery">JQuery</td>
+			</tr>
+			
+			<tr>
+				<td>Comments: (Mention External Certifications if any):<span style="color:red">*</span></td>
+				<td><TEXTAREA name="addr" Rows="3" cols="45" tabindex="0"></TEXTAREA></td>
+			</tr>
+			
+			<tr>
+				<td>Upload Degree/External Certificates:<span style="color:red">*</span></td>
+				<td><INPUT type="file" name="file"></td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td><INPUT type="button" name="but" value="Submit Information" onclick="submit">
+				<INPUT type="button" name="but" value="Clear"></td>
+			</tr>
+		</table>	
+		<footer align="center"><span style="color:red">All fields marked (*) are mandatory</span></footer>
+	</BODY>	

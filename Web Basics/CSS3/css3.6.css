@@ -1,0 +1,36 @@
+.para_class
+{
+	text-align:center;
+	text-decoration:overline;
+	text-indent:30px;
+	text-transform:capitalize;
+	text-shadow:1px 1px 1px black;
+	color:blue;
+	font-family:Lucida Handwriting;
+	font-style:oblique;
+	font-size:20px;
+
+}
+	
+
+.div_class
+{
+	text-align:center;
+	text-decoration:overline;
+	text-indent:30px;
+	text-transform:capitalize;
+	text-shadow:2px 2px 2px red;
+	color:black;
+	font-family:Lucida Handwriting;
+	font-style:oblique;
+	font-size:30px;
+}
+
+.h1_class
+{
+	text-align:center;
+	font-family:Jokerman;
+	color:green;
+	font-size:60px;
+	text-decoration:underline;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>Employee Form</TITLE>
+	</HEAD>
+	
+	<BODY>
+		<TABLE align="center" border="1" width="500px"  bgcolor="skyblue">
+			<tr>
+				 
+				<td align="center"><b>Name</b></td>
+				<td><input type="text" name="Name" size="20"></td>
+			</tr>
+			<tr>
+				<td align="center"><b>Employee Code</b></td>
+				<td><input type="text" name="Name" size="4"></td>
+		
+			</tr>
+			<tr>
+				<td align="center"><b>Department</b></td>
+				<td><INPUT type="radio" name="Admin">Admin<br>
+				<INPUT type="radio" name="HR">HR<br>
+				<INPUT type="radio" name="Technical">Technical<br>
+				<INPUT type="radio" name="Accounts">Accounts<br>
+				</td>
+			</tr>
+			<tr>
+				<td align="center"><b>date of Joining</b></td>
+				<td><table>
+							<tr>
+								<td>
+								<select option="dd">
+									<option value="1">1</option>
+								</select>
+								</td>
+								
+								<td>
+								<select option="mm">
+									<option value="01">01</option>
+								</select>
+								</td>
+								
+								<td>
+								<select option="yyyy">
+									<option value="2014">2014</option>
+								</select>
+								</td>
+							</tr>
+							
+							<tr>
+								<td><b>dd<b></td>
+								<td><b>mm<b></td>
+								<td><b>YYYY<b></td>
+							</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td align="center"><b>Address</b></td>
+				<td><TEXTAREA name="addr" Rows="5" cols="30" tabindex="0" accesskey="A"></TEXTAREA></td>
+			</tr>
+			<tr>
+				<td align="center"><b>Training Program attended</b></td>
+				<td><INPUT type="checkbox" name="HTML/DHTML">HTML/DHTML<br>
+				<INPUT type="checkbox" name="Java">Java<br>
+				<INPUT type="checkbox" name="Client/Server">Client/Server<br>
+				<INPUT type="checkbox" name=".NET">.NET<br>
+				</td>
+			</tr>
+			<tr>
+				<td align="center"><b>Training Program need to attend</b></td>
+					<td><SELECT Name="program">
+						<OPTION value="JS">JavaScript</OPTION>
+						<OPTION value="CORBA">CORBA</OPTION>
+						<OPTION value="VB6">Visual Basic 6</OPTION>
+						</SELECT>
+					</td>	
+			</tr>
+			<tr>
+				<td align="center"><b>Send the information at</b></td>
+				<td><a href="mailto:empinfo@igate.com">empinfo@igate.com</a></td>
+			</tr>
+		</TABLE>	
+	</BODY>

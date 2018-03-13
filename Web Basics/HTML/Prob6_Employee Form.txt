@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE>Form Methods</TITLE>
+</HEAD>
+<BODY bgcolor="skyblue">
+<FORM action="mailto:edude@igate.com" name="ab" method="post"
+enctype="multipart/form‐data">
+<P>
+<LABEL>Enter the password
+<INPUT type="password"name="USERNAME" size="20" value="abc" tabindex="3"></LABEL>
+<INPUT type="hidden" name="coname" value="PCS"> Enter your surname:
+<INPUT type="text" name="surname" SIZE="20" readonly value="Sukuru" tabindex="2"
+maxlength="30"> <BR> <BR>
+Address :
+<TEXTAREA name="addr" Rows="5" cols="40" tabindex="0" accesskey="A">Enter ur address
+</TEXTAREA>
+<BR> <BR> Select the training programs attended : <BR>
+<INPUT type="checkbox" name="s‐cobol"> COBOL
+<INPUT type="checkbox" name="s‐idms" checked> IDMS
+<INPUT type="checkbox" name="s‐java"> Java <BR> <BR>
+Select the group you belong to :
+<INPUT type="radio" name="s‐grp" value="grp1"> Group 1
+<INPUT type="radio" name="s‐grp" value="grp2" checked> Group 2
+<INPUT type="radio" name="s‐grp" value="grp3"> Group 3
+<INPUT type="radio" name="s‐grp" value="oth"> Others <BR> <BR>
+Which training program would you like to attend ? <SELECT Name="pref">
+<OPTION value="JS">JavaScript
+<OPTION value="CORBA">CORBA
+<OPTION value="VB6">Visual Basic 6
+</SELECT>
+</P>
+<INPUT type="file" name="fnm"> <BR><BR>
+<INPUT type="button" name="but" value="Exit">
+<INPUT type="Submit" Value="Save" name="s‐but">
+<INPUT type="reset" Value="Reset">
+</FORM>
+</BODY>
+</HTML>
