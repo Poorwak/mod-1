@@ -1,0 +1,36 @@
+/************************************************************************
+ * File			: ElectricityBill.txt
+ * Author Name		: Capgemini
+ * Desc			: Program to print electricity bill
+ * version		: 1.0
+ * Last Date Modified	: 21-Dec-2017
+ * Change Description	: Description about the changes implemented
+*************************************************************************
+
+RECORD user
+	DECLARE id AS INTEGER
+	DECLARE name[20] AS CHARACTER ARRAY
+	DECLARE last_month_meter_reading AS INTEGER
+	DECLARE current_month_meter_reading AS INTEGER
+END RECORD
+
+BEGIN
+	DECLARE unit_consumed AS INTEGER
+	DECLARE net_amount AS FLOAT
+	DECLARE CONSTANT fixed_charge = 100
+
+	PROMPT "Enter id" AND STORE IN user.id
+	PROMPT "Enter name[20]" AND STORE IN user.name
+	PROMPT "Enter last month meter reading" AND STORE IN user.last_month_meter_reading
+	PROMPT "Enter current month meter reading" AND STORE IN user.current_month_meter_reading
+	
+	CALCULATE unit_consumed = (user.Last_month_meter_reading) - (user.current_month_meter_reading)
+	CALCULATE net_amount = unit_consumed * 1.15 + fixed_charge
+
+	PRINT "User ID:" +user.id
+	PRINT "User Name:" +user.name
+	PRINT "unit Consumed:" +unit_consumed
+	PRINT "net Amount:" +net_amount
+END 
+
+

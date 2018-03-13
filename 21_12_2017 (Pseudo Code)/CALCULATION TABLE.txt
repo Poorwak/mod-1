@@ -1,0 +1,18 @@
+/*********************************************************************
+ * File                 : CalculationTable.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to accept a number and the limit, to display the calculation table 
+ * Version              : 1.0
+ * Last Modified Date   : 21-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+BEGIN
+	DECLARE num, limit, count, table AS INTEGER
+	INITIALIZE count TO 1
+	PROMPT "Enter the number and limit"
+	ACCEPT num, limit
+	FOR count= 1 to limit
+ 		table=num*count
+		PRINT table
+	END FOR
+END

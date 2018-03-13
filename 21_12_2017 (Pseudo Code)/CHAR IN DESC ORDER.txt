@@ -1,0 +1,35 @@
+//Program to accept 10 chars and display them in descending order.
+
+
+
+/*********************************************************************
+ * File                 : CharInDescOrder.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to accept 10 chars and display them in descending order
+ * Version              : 1.0
+ * Last Modified Date   : 22-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+
+BEGIN
+	DECLARE char[10], temp AS CHARACTER ARRAY
+	DECLARE index and index_1 as INTEGER
+	PROMPT "Enter 10 characters"
+
+	FOR index = 1 To 10
+		ACCEPT char[index]
+	END FOR
+
+	FOR index = 1 TO 10
+		FOR index_1 = 1 TO (10-index)
+			IF(char[index_1] > char[index_1+1])
+			temp = char[index]
+			char[index] = char[index_1]
+			char[index_1] = temp
+			END IF
+		END FOR
+	END FOR
+
+	FOR index = 10 TO 1
+	PRINT char[index]
+END 

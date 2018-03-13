@@ -1,0 +1,32 @@
+\\Program to accept 10 numbers and display total and average.
+
+
+/*********************************************************************
+ * File                 : TotalAndAverageOfNum.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to accept 10 chars and display them in descending order
+ * Version              : 1.0
+ * Last Modified Date   : 21-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+
+BEGIN
+	DECLARE num[10], Total AS INTEGER
+	DECLARE avg AS FLOAT
+	INITIALIZE Total=0
+	INITIALIZE Avg=0
+	PROMPT "Enter the numbers"
+	FOR index= 0 TO 9
+		ACCEPT num[index]
+	END FOR
+	
+	FOR index= 0 TO 9
+		CALCULATE Total += num[index]
+	END FOR
+	PRINT "Total is =" +total
+	Avg = Total/10
+	PRINT "Average is =" +avg
+END
+
+	
+	

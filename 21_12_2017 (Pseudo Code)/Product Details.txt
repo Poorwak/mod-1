@@ -1,0 +1,30 @@
+/*********************************************************************
+ * File                 : ProductDetails.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to create a record to represent a product having details such as id, name, price, 
+			  category and quantity. Insert data into the record and display the details. 
+ * Version              : 1.0
+ * Last Modified Date   : 22-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+
+RECORD product
+
+	DECLARE id as INTEGER
+	DECLARE name as CHARACTER
+	DECLARE price as INTEGER
+	DECLARE category as CHARACTER
+	DECLARE quantity as INTEGER
+
+END RECORD
+
+BEGIN
+
+	PROMPT "Enter id" AND STORE IN product.id
+	PROMPT "Enter name' AND STORE IN product.name
+	PROMPT "Enter price" AND STORE IN product.price
+	PROMPT "Enter category" AND STORE IN product.category
+	PROMPT "Enter quantity" AND STORE IN product.quantity
+
+	PRINT product.id, product.name, product.price, product.category, product.quantity
+END

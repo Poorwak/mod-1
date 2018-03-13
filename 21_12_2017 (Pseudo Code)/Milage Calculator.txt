@@ -1,0 +1,16 @@
+/*********************************************************************
+ * File                 : MilageCalculator.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to create milage calculator, assume average milage for a car is 17 kms per litre.
+ * Version              : 1.0
+ * Last Modified Date   : 22-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+
+BEGIN
+
+	DECLARE dist=0 , avg=17, milage=0, lit=0   
+	PROMPT "Enter the quantity of the fuel" AND STORE IN lit
+	CALCULATE dist=lit*avg
+	PRINT dist
+END                                                                

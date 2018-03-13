@@ -1,0 +1,29 @@
+/*********************************************************************
+ * File                 : SwapTwoNumbers.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to accept two numbers in a record and swap them, once swapped display them. 
+ * Version              : 1.0
+ * Last Modified Date   : 21-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+
+
+RECORD Number
+	DECLARE num1 as INTEGER
+	DECLARE num2 as INTEGER
+	DECLARE temp as INTEGER
+END RECORD
+
+BEGIN
+	PRINT "Enter the two numbers"
+	ACCEPT number.num1, number.num2
+	number.temp = number.num1
+	number.num1 = number.num2
+	number.num2 = number.temp
+
+	PRINT "Swapped Numbers are:"
+	PRINT number.num1, number.num2
+END
+
+
+	
