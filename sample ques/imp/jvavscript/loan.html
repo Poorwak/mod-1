@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#td1
+{
+font-weight:bold;
+font-size:40px;
+}
+table
+{
+border:2px solid black;
+height:60%
+}
+#cNumber,#cName,#email
+{
+border:2px solid black;
+}
+#b1,#b2
+{
+border:none;
+}
+</style>
+<script>
+	function durationofLoan(){
+	var loanAmt=frm1.loanAmount.value;
+	//alert(loanAmt);
+		if(loanAmt >= '50,000 to 100000')
+			var period = 1;
+		else if(loanAmt >= '100001 to 200000')
+			var period = 5;
+		else if(loanAmt >= '200001 to 300000')
+			var period = 10;
+		return period;
+	}
+function displayAlert()
+{
+	var name =frm1.cName.value;
+	var no =frm1.cNumber.value;
+	var lnAmt =frm1.loanAmount.value;
+	var duration =durationofLoan();
+	//alert(duration);
+	var idProof =frm1.chk1;
+	var idSelected =false;
+	for(i=0;i<idProof.length;i++){
+		if(i<idProof[i].checked){
+			idSelected = true;
+		}
+	}
+	if(!idSelected){
+		alert("Id should be selected");
+		idProof[0].focus();
+		}
+		alert("Customer Name:"+name+"\n Mobile no:"+no+"\nLoan Amount:"+lnAmt+"\n Payable Duration:"+duration);
+	}
+	</script>
+
+</head>
+<body>
+
+<form name="frm1" onsubmit="displayAlert()">
+<table align="center"> 
+	<tr>
+		<td colspan="2" id="td1">Loan Application Form</td>
+	</tr>
+	<tr>
+		<td>Do you have a loan already?</td>
+		<td><input type="radio" name="Yes" id="yes" style="border:3px solid black;">Yes
+		<input type="radio" name="Yes" id="no">No</td>
+	</tr>
+	<tr>
+		<td>Customer Name:</td>
+		<td><input type="text" name="cName" id="cName" required pattern="[a-zA-Z]{4,}"></td>
+	</tr>
+	<tr>
+		<td>Mobile Number</td>
+		<td><input type="text" pattern="[7-9][0-9]{9}" name="cNumber" id="cNumber" size="10"></td>
+	</tr>
+	<tr>
+		<td>EMailId</td>
+		<td><input type="email" id="email" name="email"/></td>
+	</tr>
+	<tr>
+		<td>Proof of Identity:</td>
+		<td><input type="checkbox" id="PAN Card" name="chk1" value="PAN"/>PAN Card
+		<input type="checkbox" id="Voters Id" name="chk1" value="Voter"/>Voters Id<br/>
+		<input type="checkbox" id="Passport" name="chk1" value="Pass"/>Passport
+		<input type="checkbox" id="Driving License" name="chk1" value="Dri"/>Driving License
+		</td>
+	</tr>
+	<tr>
+		<td>Loan Amount</td>
+			<td><select id="loanAmount">
+					<option value="loan amount">loan amount</option>
+					<option value="50000 to 100000">50,000 to 100000</option>
+					<option value="100001 to 200000">100001 to 200000</option>
+					<option value="200001 to 300000">200001 to 300000</option>
+				</select>
+			</td>
+	</tr>
+		<tr>
+			<td align="center"><input type="submit" value="Apply Loan"></td>
+			<td><input type="reset" value="Reset"></td>
+		</tr>
+</table>
+</form>
+
+</body>
+</html>

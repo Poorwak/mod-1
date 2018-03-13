@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<EmployeeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="prob2.2.2.xsd">
+	<Employee Empno="7369">
+		<Ename>Smith</Ename>
+		<Job>CLERK</Job>
+		<MGR>7902</MGR>
+		<Hiredate>17-DEC-80</Hiredate>
+		<sal>1100</sal>
+		<comm>200</comm>
+		<Deptno>20</Deptno>
+	</Employee>
+	<Employee Empno="7499">
+		<Ename>Allen</Ename>
+		<Job>SALESMAN</Job>
+		<MGR>7698</MGR>
+		<Hiredate>20-FEB-81</Hiredate>
+		<sal>1600</sal>
+		<comm>24820</comm>
+		<Deptno>30</Deptno>
+	</Employee>
+	<Employee Empno="7521">
+		<Ename>Ward</Ename>
+		<Job>SALESMAN</Job>
+		<MGR>7698</MGR>
+		<Hiredate>22-FEB-81</Hiredate>
+		<sal>1375</sal>
+		<comm>19700</comm>
+		<Deptno>30</Deptno>
+	</Employee>
+	<Employee Empno="7566">
+		<Ename>Jones</Ename>
+		<Job>MANAGER</Job>
+		<MGR>7839</MGR>
+		<Hiredate>02-APR-81</Hiredate>
+		<sal>3175</sal>
+		<comm/>
+		<Deptno>20</Deptno>
+	</Employee>
+	<Employee Empno="7788">
+		<Ename>Scott</Ename>
+		<Job>ANALYST</Job>
+		<MGR>7566</MGR>
+		<Hiredate>19-APR-87</Hiredate>
+		<sal>2000</sal>
+		<comm/>
+		<Deptno>20</Deptno>
+	</Employee>
+	
+</EmployeeList>

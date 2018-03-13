@@ -1,0 +1,41 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Ename" type="xs:string"/>
+	<xs:element name="Job" type="jobtype"/>
+	<xs:element name="MGR" type="xs:integer"/>
+	<xs:element name="Hiredate" type="xs:string"/>
+	<xs:element name="sal" type="xs:integer"/>
+	<xs:element name="comm" type="xs:string"/>
+	<xs:element name="Deptno" type="xs:integer"/>
+	<xs:element name="Employee" type="empType"/>
+
+		<xs:simpleType name="jobtype">
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="CLERK"/>
+				<xs:enumeration value="SALESMAN"/>
+				<xs:enumeration value="MANAGER"/>
+				<xs:enumeration value="ANALYST"/>
+			</xs:restriction>
+		</xs:simpleType>
+	
+		<xs:complexType name="empType">
+			<xs:sequence>
+				<xs:element ref="Ename"/>
+				<xs:element ref="Job"/>
+				<xs:element ref="MGR"/>
+				<xs:element ref="Hiredate"/>
+				<xs:element ref="sal"/>
+				<xs:element ref="comm"/>
+				<xs:element ref="Deptno"/>
+			</xs:sequence>
+			
+			<xs:attribute name="Empno" type="xs:integer" use="required"/>
+			
+		</xs:complexType>
+		
+		<xs:element name="EmployeeList" type="elistType"/>
+		<xs:complexType name="elistType">
+			<xs:sequence>
+				<xs:element ref="Employee" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+</xs:schema>

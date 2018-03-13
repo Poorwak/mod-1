@@ -1,0 +1,54 @@
+/***********************************************************************************************
+File Name: discount_calculation.txt
+Author Name: Amit Bable
+version 1.0
+creation date: 
+**********************************************************************************************/
+BEGIN
+
+      DECLARE studentName As STRING
+      DECLARE percentage AS REAL
+      PROMPT "Enter student Name" AND STORE IN studentName
+      PROMPT "Enter percentage scored" AND STORE IN percentage
+      CalculateDiscount(studentName,percentage);
+      EXCEPTION
+               WHEN Invalid_details THEN 
+                    PRINT "Enter valid details"
+
+END
+
+
+/***********************************************************************************************
+*Module name  : CalculateDiscount()
+*Input parameters: Real,string
+*output parameters: real
+*Description : Accepting details and calculating the discounts according to percentage
+*version : 1.1
+*creation date:
+***********************************************************************************************/
+
+SUB
+ 
+     CalculateDiscount(STRING studentName,REAL percentage)
+     DECLARE Discount AS INTEGER
+     DECLARE FeesDiscount AS INTEGER
+     DECLARE CONSTANT BASIC_FEES AS INTEGER AND STORE 6000
+     IF(Percentage >90 ) THEN
+                 Discount=50
+                 CALCULATE FeesDiscount=(Discount/100)*BASIC_FEES
+
+     ELSEIF (percentage >=80 AND percentage< 89 )  '
+                 Discount=40
+                 CALCULATE FeesDiscount=(Discount/100)*BASIC_FEES 
+     ELSEIF (percentage >=70 AND percentage< 79 )  '
+                 Discount=30
+                 CALCULATE FeesDiscount=(Discount/100)*BASIC_FEES 
+     END IF
+
+     PRINT"Student Name :"+studentName 
+     PRINT"Percentage scored :"+percentage 
+     PRINT"Discount on fees :"+Discount
+     PRINT"fees after including discount :"+FeesDiscount
+    RAISE Invalid_Details("Invalid details")
+SUB
+       

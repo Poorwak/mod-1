@@ -1,0 +1,20 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="To" type="xs:string"/>
+	<xs:element name="From" type="xs:string"/>
+	<xs:element name="cc" type="xs:string"/>
+	<xs:element name="BCC" type="xs:string"/>
+	<xs:element name="Subject" type="xs:string"/>
+	<xs:element name="body" type="xs:string"/>
+	<xs:element name="Email" type="EmailType"/>
+
+		<xs:complexType name="EmailType">
+			<xs:sequence>
+				<xs:element ref="To"/>
+				<xs:element ref="From"/>
+				<xs:element ref="cc"/>
+				<xs:element ref="BCC"/>
+				<xs:element ref="Subject"/>
+				<xs:element ref="body"/>
+			</xs:sequence>
+		</xs:complexType>
+</xs:schema>

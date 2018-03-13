@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+          function check(){
+		  var patt=frm1.txtPattern.value;
+		  var str=frm1.txtStr.value;
+		  var regEx=new RegExp(patt);
+		  if(regEx.test(str)){
+		  alert("Match found..");
+		  }
+		  else {
+		  alert("Match not found..");
+		  }
+		  }
+</script>
+
+<form name="frm1">
+    Enter pattern:
+	<input type="text" name="txtPattern"/><br/>
+	Enter String:
+	<input type="text" name="txtStr"/><br/>
+	<input type="button" value="Check"
+	onclick="check()"/>
+	
+	</form>
+	</body>
+	</html>

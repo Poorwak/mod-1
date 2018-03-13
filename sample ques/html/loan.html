@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Loan application</title>
+</head>
+<body>
+<script src="loan1.js"></script>
+<form name="frm1" onsubmit="return validate()" >
+<table align="center" style="border:1px solid" width="500px" bgcolor="white">
+	
+	<tr><colspan="2"><center><b>Loan Application Form</center></b></colspan>
+	</tr>
+	<tr>
+		<td>Do you have a loan already?</td>
+		<td><input type="radio" name="loan">Yes
+		<input type="radio" name="loan">No
+		</td>
+	</tr>
+	<tr>
+		<td>Customer Name:</td>
+		<td><input type="text" required name="cName" minlength="4"  /></td>
+	</tr>
+	<tr>
+		<td>Mobile Number</td>
+		<td><input type="text" name="cNumber" pattern="[7-9][0-9]{9}" title="9850596432" size="10"></td>
+	</tr>
+	<tr>
+		<td>EMailId</td>
+		<td><input type="email" id="email" name="email" required /></td>
+	</tr>
+	<tr>
+		<td>Proof of Identity:</td>
+		<td><input type="checkbox" id="PAN Card" name="chk1"/>PAN Card
+		<input type="checkbox" id="Voters Id" name="chk1"/>Voters Id<br/>
+		<input type="checkbox" id="Passport" name="chk1"/>Passport
+		<input type="checkbox" id="Driving License" name="chk1"/>Driving License
+		</td>
+	</tr>
+	<tr>
+		<td>Loan Amount</td>
+			<td><select  name="loanAmount">
+					<option value="loan amount">loan amount</option>
+					<option value="1">50,000 to 100000</option>
+					<option value="2">100001 to 200000</option>
+					<option value="3">200001 to 300000</option></td>
+		</tr>
+		<tr>
+			<td align="center"><input type="Submit" value="Apply Loan"></td>
+			<td><input type="Reset" value="Reset"></td>
+		</tr>
+</table>
+</form>
+</body>
+</html>

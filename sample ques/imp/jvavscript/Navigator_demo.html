@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+          document.write("<br/>"+navigator.appName);
+		  document.write("<br/>"+navigator.appCodeName);
+		  document.write("<br/>"+navigator.appVersion);
+		  document.write("<br/>"+navigator.userAgent);
+		  document.write("<br/>"+navigator.platform);
+		  document.write("<br/>"+navigator.cookieEnabled);
+		  document.write("<h2>Plugins installed</h2>");
+		  
+		  var pluginArr=navigator.plugin;
+		  for(i=0;i<pluginArr.length;i++){
+		  document.write("<br/>"+pluginArr[i].name);
+		  }
+		  var mimeArr=navigator.mimeTypes;
+		  document.write("<h2>MimeType supported </h2>");
+		  
+		  for(i=0;i<mimeArr.length;i++){
+		  document.write("<br/>"+mimeArr[i].type);
+		  }
+</script>
+		  <h1> Navigator Demo</h1>
+</body>
+</html>

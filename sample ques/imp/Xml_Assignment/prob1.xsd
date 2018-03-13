@@ -1,0 +1,46 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="empName" type="eNameType"/>
+	<xs:element name="sal" type="salType"/>
+	<xs:element name="dept" type="deptType"/>
+	<xs:element name="Employee" type="empType"/>
+
+		<xs:simpleType name="deptType">
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="HR"/>
+				<xs:enumeration value="SALES"/>
+				<xs:enumeration value="DEVELOPMENT"/>
+				<xs:enumeration value="TRAINING"/>
+			</xs:restriction>
+		</xs:simpleType>
+	
+		<xs:simpleType name="eNameType">
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[A-Z][A-Za-z]{3,}"/>
+			</xs:restriction>
+		</xs:simpleType>
+		
+		<xs:simpleType name="salType">
+			<xs:restriction base="xs:double">
+				<xs:minInclusive value="1000"/>
+				<xs:maxInclusive value="100000"/>
+			</xs:restriction>
+		</xs:simpleType>
+		
+		<xs:complexType name="empType">
+			<xs:sequence>
+				<xs:element ref="empName"/>
+				<xs:element ref="sal"/>
+				<xs:element ref="dept"/>
+			</xs:sequence>
+			
+			<xs:attribute name="empno" type="xs:integer" use="required"/>
+			
+		</xs:complexType>
+		
+		<xs:element name="EmployeeList" type="elistType"/>
+		<xs:complexType name="elistType">
+			<xs:sequence>
+				<xs:element ref="Employee" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+</xs:schema>

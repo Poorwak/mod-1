@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<EmpDetails>
+	<Employee Code="1111">
+		<EmployeeName>
+			<fName>Seema</fName>
+			<lName>Dalvi</lName>
+		</EmployeeName>
+		<DOJ>09/08/97</DOJ>
+		<totalExperience>12</totalExperience>
+		<department>
+			<unit>3d</unit>
+			<Ioc>Mumbai</Ioc>
+		</department>
+		<designation>4</designation>
+		<sal>21000</sal>
+		<grade>b</grade>
+	</Employee>
+		
+	<Employee Code="2222">
+		<EmployeeName>
+			<fName>Bharati</fName>
+			<lName>Mantri</lName>
+		</EmployeeName>
+		<DOJ>12/01/99</DOJ>
+		<totalExperience>5</totalExperience>
+		<department>
+			<unit>4a</unit>
+			<Ioc>Pune</Ioc>
+		</department>
+		<designation>2</designation>
+		<sal>12000</sal>
+		<grade>a</grade>
+	</Employee>
+	
+	
+	
+</EmpDetails>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<RegistrationForm
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="emp.xsd">
+	<Scholar>
+		<Roll_no>1</Roll_no>	
+		<First_Name>John</First_Name>
+		<Last_Name>Reddy</Last_Name>
+		<Course>PHD</Course>
+		<Registration_date>09-7-16</Registration_date>
+		<Mobile_number>345476757</Mobile_number>
+		<Research_topic>fdfdg</Research_topic>
+		<Guide_name>Dr.Rajiv Rajnathan</Guide_name>
+		<Permanent_address>mumbai</Permanent_address>
+	</Scholar>
+	
+		<Scholar>
+		<Roll_no>2</Roll_no>	
+		<First_Name>Namrata</First_Name>
+		<Last_Name>Mehta</Last_Name>
+		<Course>Mphil</Course>
+		<Registration_date>06-9-16</Registration_date>
+		<Mobile_number>3454767687</Mobile_number>
+		<Research_topic> ftu</Research_topic>
+		<Guide_name>Dr.Vijay Mathur</Guide_name>
+		<Permanent_address>delhi</Permanent_address>
+	</Scholar>
+	
+	<Scholar>
+		<Roll_no>3</Roll_no>	
+		<First_Name>Purva</First_Name>
+		<Last_Name>Desai</Last_Name>
+		<Course>PHD</Course>
+		<Registration_date>04-2-16</Registration_date>
+		<Mobile_number>343556757</Mobile_number>
+		<Research_topic>tyfgh</Research_topic>
+		<Guide_name>Dr.Binod Kumar</Guide_name>
+		<Permanent_address>bangalore</Permanent_address>
+	</Scholar>
+
+</RegistrationForm>
+	
+	

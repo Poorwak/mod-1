@@ -1,0 +1,22 @@
+ <!DOCTYPE html>
+ <html>
+ <body>
+ <script>
+           var images=["img1","img2","img3"];
+		   var i=0;
+		   function changeImage(){
+		   //alert ("called");
+		   i++;
+		   if(i==images.length){i=0;}
+           var image =document.getElementById("imgMyImage");
+           image.src="images/"+images[i]+".jpg";
+		   }	   
+ </script>
+ <h1> Event Demo</h1>
+ <img src="images/img1.jpg" id="imgMyImage"
+ onmouseover="changeImage()"
+ onmouseout="changeImage()"
+ width="400" height="300"/>
+ 
+ </body>
+ </html>

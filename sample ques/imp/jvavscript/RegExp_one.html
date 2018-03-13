@@ -1,0 +1,48 @@
+<html>
+<body>
+<script scr="validate.js">
+                       function validate(){
+					   if(validateDoB() && validateState()){
+					   var win=window.open();
+					   var dobStr=frm1.dob.value;
+					   var uname=frm1.txtUname.value;
+					   var stste=frm1.state.value;
+					   var city=frm1.city.value;
+					   win.document.write("<br/>Name:"+uname);
+					   win.document.write("<br/>Date of Birth:"+dobStr);
+					   win.document.write("<br/>Name:"+state);
+					   win.document.write("<br/>Name:"+city);
+					   return true;
+					   }}
+                       function validateState(){
+					   var state =frm1.state.value;
+					   if(state=="None"){
+					   alert("Select the state...");
+					   frm1.state.focus();
+					   return false;
+					   }else{
+					   return true;
+					   }
+					 }
+					   
+</script>
+<form name ="frm1" onsubmit="return validate()">
+Enter your name:
+<input type="text"  name="txtUname"/><br/>
+Enter date of birth:
+
+<input type="date" name="dob"/></br/>
+select state:
+<select name="state" onchange="populateCity()">
+<option value="MH">Maharashtra</option>
+<option value="KR">Karnataka</option>
+<option value="MH">Utter Pradesh</option>
+
+</select> <br/>
+select city:
+<select name="city">
+<option> Select City</option>
+</select>
+
+</body>
+</html>

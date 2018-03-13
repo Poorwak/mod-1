@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Email>
+	<To>xyz.zyx@Capgemini.com</To>
+	<From>abc.cba@Capgemini.com</From>
+	<cc>efd@Capgemini.com</cc>
+	<BCC>ghi@Capgemini.com</BCC>
+	<Subject>To Display xml file</Subject>
+	<body>this an xml assignment</body>
+</Email>
