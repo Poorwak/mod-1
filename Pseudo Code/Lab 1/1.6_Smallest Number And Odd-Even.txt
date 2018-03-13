@@ -1,0 +1,63 @@
+/***********************************************************************************************
+ * File			: SmallestNumber.txt
+ * Author Name		: Capgemini
+ * Desc			: Program to accept 10 numbers in an array and find the smallest number.
+ * version		: 1.0
+ * Last Date Modified	: 23-Dec-2017
+ * Change Description	: Description about the changes implemented
+************************************************************************************************
+
+BEGIN
+	DECLARE num[10] AS INTEGER ARRAY
+	DECLARE min = 0 AS INTEGER
+	
+	FOR index = 1 TO 10
+		PRINT "Enter the numbers" 
+		ACCEPT num[index]
+	END FOR
+
+	FOR index = 1 TO 10
+		IF(num[1] < min) THEN
+			min = num[index]
+		END IF
+	END FOR
+
+	PRINT "The Smallest Number is :" +min
+END
+
+
+
+
+
+
+/***********************************************************************************************
+ * File			: OddEvenNumber.txt
+ * Author Name		: Capgemini
+ * Desc			: Program to accept 10 numbers in an array and display all odd and even numbers separately.
+ * version		: 1.0
+ * Last Date Modified	: 23-Dec-2017
+ * Change Description	: Description about the changes implemented
+************************************************************************************************
+			
+BEGIN
+	DECLARE num[10] AS INTEGER ARRAY
+	PROMPT "Enter the numbers"
+
+	FOR index = 1 TO 10
+		ACCEPT num[index]
+	END FOR
+	
+	PRINT "Even Numbers are"
+	FOR index = 1 TO 10
+		IF(num[index] % 2 == 0) THEN
+			PRINT num[index] 
+		END IF
+	END FOR
+
+	PRINT "Odd Numbers are"
+	FOR index = 1 TO 10
+		IF(num[index] % 2 != 0) THEN
+			PRINT num[index] 
+		END IF
+	END FOR
+END

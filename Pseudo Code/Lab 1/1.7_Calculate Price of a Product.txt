@@ -1,0 +1,21 @@
+/*********************************************************************
+ * File                 : priceOfAProduct.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to calculate total price of a product including tax. 
+ * Version              : 1.0
+ * Last Modified Date   : 21-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+
+BEGIN
+	DECLARE price AS INTEGER
+	DECLARE total_price AS INTEGER
+	DECLARE CONSTANT tax_rate = 0.56
+
+	PROMPT "Enter price of your product" AND SAVE IN price
+	
+
+	CALCULATE total_price = price * tax_rate
+
+	PRINT "Total price of product is": +total_price
+END

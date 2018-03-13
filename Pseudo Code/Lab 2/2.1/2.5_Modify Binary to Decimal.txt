@@ -1,0 +1,39 @@
+/*****************************************************
+* File 			: ModifyBinarytoDecimal.txt
+* Author Name		: Capgemini
+* Description		: To convert binary number to decimal no
+* Version		: 1.0
+* Last Modified Date	: 23-Dec-2017
+
+******************************************************/
+BEGIN
+	DECLARE  binary_no AS INTEGER
+	PRINT "Enter the binary number :"
+	ACCEPT binary_no
+	Deciaml_No = Convert_binary_to_decimal_value( binary_no )
+	PRINT " The decimal number is :" +Decimal_no
+END
+
+/*********************************************************************
+* Module Name         : Convert_binary_to_decimal_value( )
+* Input Parameters    : number
+* Return Type         : INTEGER
+* Author              : Capgemini
+* Creation Date       : 23-DEC-2017
+* Description         : Conversion of binary value to decimal value
+ *********************************************************************/
+
+SUB Convert_binary_to_decimal_value( Binary_No )
+	DECLARE  decimal_no AS INTEGER
+	DECLARE base AS INTEGER
+	INTIALIZE base TO 1
+	INTIALIZE decimal_no TO 0
+	WHILE (binary_no > 0)
+	DO
+ 		remainder=binary_no % 10
+ 		decimal_no += remainder * base
+ 		binary_no /= 10
+ 		base *= 2
+	END WHILE
+	return ( decimal_no )
+END SUB

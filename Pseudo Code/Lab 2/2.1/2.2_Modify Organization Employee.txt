@@ -1,0 +1,40 @@
+ /*****************************************************
+* File 			: ModifyOrganizationEmployee.txt
+* Author Name		: Capgemini
+* Description		: Accept the experience and display the tagcolor
+* Version		: 1.0
+* Last Modified Date	: 23-Dec-2017
+
+******************************************************/
+BEGIN
+	DECLARE Yearofexp AS INTEGER
+	PRINT " Enter the year of experience : "
+	ACCEPT Yearofexp
+	TagColor = Print_TagColor( Yearofexp )
+END
+
+/*********************************************************************
+* Module Name         : Print_TagColor( )
+* Input Parameters    : number
+* Return Type         : number
+* Author              : Capgemini
+* Creation Date       : 23-Dec-2017
+* Description         : Printing the TagColor on the basis of year of experiencing 
+ *********************************************************************/
+
+SUB Print_TagColor( yearofexp )
+
+	IF ( Yearofexp >= 0 && Yearofexp < 3 )THEN
+		PRINT " Tag color is BLUE "
+
+	ELSE IF ( Yearofexp >= 3 && Yearofexp < 5 )THEN
+		PRINT " Tag color is GREY "
+
+	ELSE IF ( Yearofexp >= 5 && Yearofexp < 10 )THEN
+		PRINT " Tag color is YELLOW "
+
+	ELSE
+		PRINT " Tag color is RED "
+
+	END IF
+END SUB

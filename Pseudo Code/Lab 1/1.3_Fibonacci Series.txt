@@ -1,0 +1,20 @@
+/*********************************************************************
+ * File                 : FibonacciSeries.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to print the fabonacci series. 
+ * Version              : 1.0
+ * Last Modified Date   : 21-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+BEGIN
+	DECLARE n, num1, num2 AS INTEGER
+	INITIALIZE num1 = 0, num2 = 1
+	PROMPT "Enter the number" AND STORE IN n
+
+	FOR index = 0 TO n
+		PRINT num1
+		CALCULATE sum = num1 + num2
+		num1 = num2
+		num2 = sum
+	END FOR
+END

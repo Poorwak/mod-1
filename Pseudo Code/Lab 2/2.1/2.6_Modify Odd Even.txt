@@ -1,0 +1,65 @@
+/**************************************************
+* File 			: ModifyOddEven.txt
+* Author Name		: Capgemini
+Description		: Display smallest number in array of 10 numbers
+			  and Display all ODD and EVEN numbers separately
+Version			: 1.0
+Creation Date	        : December 23, 2017
+****************************************************/
+
+BEGIN 
+	DECLARE numbers[10] AS INTEGER ARRAY 
+	PROMPT "Enter 10 numbers in array"
+	FOR index = 0 TO 9
+		ACCEPT number[index]
+	END FOR
+	find_smallest(numbers)
+	print_odd_even(numbers)
+END
+
+
+
+/***********************************************
+Module Name		:	find_smallest()
+Input Parameter	 	:	INTEGER ARRAY number[10]
+Output_Parameter	:	(void)
+Description		:	Display smallest number in array of 10 numbers
+Creation Date		:	December 23, 2017 
+***********************************************/
+SUB
+	find_smallest(INTEGER ARRAY numbers[10])
+		DECLARE smallest,index AS INTEGER
+		INITIALIZE smallest TO number[0]                         
+		FOR index = 0 TO 9
+			IF ( smallest > number[index] ) THEN
+				SET smallest = number[index]
+			END IF
+		END FOR
+		PRINT smallest
+END SUB
+
+
+/***********************************************
+Module Name		:	print_odd_even()
+Input Parameter	 	:	INTEGER ARRAY number[10]
+Output_Parameter	:	(void)
+Description		:	Display all ODD and EVEN numbers separately
+Creation Date		:	December 23, 2017 
+***********************************************/
+
+SUB
+	print_odd_even(INTEGER ARRAY numbers)
+		DECLARE index AS INTEGER
+		PRINT " ODD numbers are "
+		FOR index = 0 TO 9
+			IF ( number[index] MOD 2 != 2 ) THEN
+				PRINT number[index]
+			END IF
+		END FOR
+		PRINT " EVEN numbers are "
+		FOR index = 0 TO 9
+			IF ( number[index] MOD 2 == 2 ) THEN
+				PRINT number[index]
+			END IF
+		END FOR
+END SUB

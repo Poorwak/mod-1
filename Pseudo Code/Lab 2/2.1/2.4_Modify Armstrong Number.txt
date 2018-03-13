@@ -1,0 +1,74 @@
+/*****************************************************
+* File 			: ModifyArmstrongNumber.txt
+* Author Name		: Capgemini
+* Description		: To check whether the no is armstrong or not
+* Version		: 1.0
+* Last Modified Date	: 23-Dec-2017
+
+******************************************************/
+BEGIN
+	DECLARE Number AS INTEGER 
+	
+	PRINT "Enter an number :"
+	ACCEPT Number
+	calculate_no_of_digits = Calculate_No_Of_Digit( Number )
+	calculate_armstrong_number = Calculate_Armstrong_Number( Number , calculate_no_of_digits )
+	Print_Is_Valid_Armstrong_Number( Number ,  calculate_armstrong_number )
+END
+
+/*********************************************************************
+* Module Name         : Calculate_No_Of_Digit( )
+* Input Parameters    : Number
+* Return Type         : INTEGER
+* Author              : Capgemini
+* Creation Date       : 23-Dec-2017
+* Description         : Calculating no of digits in a number
+ *********************************************************************/
+
+SUB Calculate_No_Of_Digit( Number1 )
+	DECLARE count AS INTEGER
+	INTIALIZE count TO 0
+	WHILE (Number1 !=0)
+	DO
+   		Number1 /= 10
+   		count += 1
+	END WHILE
+	return ( count )
+END SUB
+
+
+/*********************************************************************
+* Module Name         : Calculate_Armstrong_Number( )
+* Input Parameters    : Number 
+* Return Type         : INTEGER
+* Author              : Capgemini
+* Creation Date       : 23-Dec-2017
+* Description         : Calculating the armstrong no
+ *********************************************************************/
+
+SUB Calculate_Armstrong_Number( Number2 , calc_no_of_digits )
+	WHILE( Number2 != 0 )
+	DO
+   		remainder = Number2 % 10   
+  	 	result += pow(remainder,count)
+   		Number2 /= 10
+	END WHILE
+	return ( result )
+END SUB
+
+
+/*********************************************************************
+* Module Name         : Print_Is_Valid_Armstrong_Number( )
+* Input Parameters    : Number
+* Return Type         : INTEGER
+* Author              : Capgemini
+* Creation Date       : 23-Dec-2017
+* Description         : printing whether the no is a valid armstrong number or not
+ *********************************************************************/
+SUB Print_Is_Valid_Armstrong_Number( Number3 ,  calc_armstrong_number )
+	IF ( result == Number3 )THEN
+   		PRINT Number3 "is an Armstrong number"
+	ELSE
+ 		PRINT Number3 "is not an Armstrong number"
+	END IF
+END SUB

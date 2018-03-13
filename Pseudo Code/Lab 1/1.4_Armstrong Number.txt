@@ -1,0 +1,26 @@
+/*********************************************************************
+ * File                 : AmstrongNumber.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to accept a number and check whether a given number is an armstrong number. 
+ * Version              : 1.0
+ * Last Modified Date   : 21-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+
+BEGIN
+	DECLARE n AS INTEGER
+	DECLARE s AS INTEGER
+	DECLARE r AS INTEGER
+	
+	PROMPT "Enter the number" AND STORE IN n 
+	WHILE (n > 0)
+		r = n % 10
+		s = s + r*r*r
+		IF s = n THEN n/10
+			PRINT s + "is an Armstrong Number"
+		ELSE
+			PRINT s + "is not an Armstrong Number"
+		END IF
+END
+	
+

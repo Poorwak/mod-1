@@ -1,0 +1,38 @@
+/************************************************************
+*File  			: Lab3.2.txt
+*Author Name		: Capgemini
+*Description 		: Determine The Output
+*Version		: 1.0
+*Last Modified Date 	: 30-DEC-2017
+************************************************************/
+
+Determine the output of below given algorithm by tracing it for the taking any sample
+input.
+
+
+	ALGORITHM surprise(A[0..n-1])
+
+//Input: 	An array A[0..n-1] of real numbers
+		If n=1
+			return A[0]
+		else
+		t<-surprise(A[0..n-2])
+		
+		if t<=A[n-1]
+			return t
+		else
+			return A[n-1]
+
+
+
+ANSWER : The output of the code is non generic as there is a Random function which would generate different output everytime.
+
+         Let the size of the array be 5
+
+         and the arrray elements be 2 3 4 6 1 
+
+         The surprise function can take any value from the array 0- (n-2)
+
+         Let the value taken by surprise function be 3 and comapring it with 6 { 0 - (n-1) }
+
+         The output therefore is 3.

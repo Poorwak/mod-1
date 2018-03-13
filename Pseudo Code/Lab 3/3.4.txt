@@ -1,0 +1,15 @@
+/**************************************************
+File 			: 3.4.txt
+Author Name 		: Capgemini
+Description		: Answer the questions that follow the algorithm
+Version			: 1.0
+Creation Date		: December 23, 2017
+****************************************************/
+3.4 
+ANs 1 : Above algorithm calculates the sum of first 'n' numbers. 
+	User enters a non negative value of 'n'.
+ANs 2 : The given algorithm runs in linear time. 
+	The number of times for loop executes depends on the value of 'n'.
+	Hence, the algorithm runs in linear time. 
+	O ( n) . 
+	

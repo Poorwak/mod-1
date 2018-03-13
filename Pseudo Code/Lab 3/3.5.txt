@@ -1,0 +1,76 @@
+/**************************************************
+File 			: 3.5.txt
+Author Name 		: Capgemini
+Description		: Find the number of times a character is found in the word
+Version			: 1.0
+Creation Date		: December 23, 2017
+****************************************************/
+
+BEGIN 
+	DECLARE character AS CHARACTER
+	DECLARE word AS STRING
+	DECLARE numberofoccurences AS INTEGER
+	PROMPT "Enter word "
+	ACCEPT word
+	PROMPT "Enter character"
+	ACCEPT character 
+	SET numberofoccurences = countletteroccurrence(word,character)
+	PRINT numberofoccurences
+END
+
+
+
+
+/***********************************************
+Module Name		: countletteroccurrence()
+Input Parameter	 	: word,character
+Output_Parameter	: INTEGER count
+Description		: Find the number of times a character is found in the word
+Creation Date		: December 23, 2017 
+***********************************************/
+
+
+SUB
+	countletteroccurrence(STRING word,CHARACTER character)
+		DECLARE count,index AS INTEGER
+		INITIALIZE count TO 0
+		INITIALIZE index TO 0
+		WHILE ( word[index] ! = NULL )
+			IF ( word[index] == character )
+				SET count = count + 1
+			END IF
+		END WHILE
+		RETURN count
+END
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

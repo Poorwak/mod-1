@@ -1,0 +1,38 @@
+/**************************************************
+File 			: 4.3.txt
+Author Name 		: Capgemini
+Description		: Modify Pseudocode to implement good programming practices
+Version			: 1.0
+Creation Date		: December 23, 2017
+****************************************************/
+
+
+BEGIN
+	DECLARE price,totalcost AS INTEGER
+	PRINT "Enter price of your product"
+	ACCEPT price
+	calculateprice(price)
+	EXCEPTION
+		WHEN positivepriceexception THEN
+			PRINT errormessage
+END
+
+
+
+/***********************************************
+Module Name		:	calculateprice()
+Input Parameter	 	:	INTEGER
+Output_Parameter	:	(void)
+Description		:	Calculate total cost
+Creation Date		:	December 23, 2017 
+***********************************************/
+
+SUB
+	calculateprice(INTEGER price)
+		DECLARE CONSTANT TAX_RATE AS REAL AND STORE .56
+		IF ( price < 0 )
+			RAISE positivepriceexception("Price can be only positive")
+		END IF
+		CALCULATE totalcost=price*TAX_RATE
+		PRINT "Total price of product is": totalcost
+END SUB

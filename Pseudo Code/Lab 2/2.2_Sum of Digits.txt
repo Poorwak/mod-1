@@ -1,0 +1,38 @@
+/*********************************************************************
+ * File                 : ModulerSumofDigits.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to accept a number and return the sum of its digits. 
+ * Version              : 1.0
+ * Last Modified Date   : 23-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+
+BEGIN
+	DECLARE num, result AS INTEGER
+	PROMPT "Enter the number" AND STORE IN num
+	result = sumofdigit(num)
+	PRINT result
+END
+
+/*********************************************************************
+* Module Name         : sumofdigit()
+* Input Parameters    : number
+* Return Type         : number
+* Author              : Capgemini
+* Creation Date       : 23-Dec-2017
+* Description         : sum of the digits 
+ *********************************************************************/
+
+SUB sumofdigits(num)
+	DECLARE sum AS INTEGER
+	DECLARE rem AS INTEGER
+	INITIALIZE sum TO 0
+	INITIALIZE rem TO 0	
+
+	WHILE(num > 0)
+		rem = num % 10
+		sum = sum + rem
+		num = num / 10
+	END WHILE
+	RETURN sum
+END SUB

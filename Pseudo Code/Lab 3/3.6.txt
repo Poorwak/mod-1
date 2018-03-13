@@ -1,0 +1,75 @@
+/**************************************************
+File 			: 3.6.txt
+Author Name 		: Capgemini
+Description		: Implement the binary search and bubble sort
+Version			: 1.0
+Creation Date		: December 23, 2017
+****************************************************/
+
+BEGIN
+
+	DECLARE Numbers[10] AS INTEGER ARRAY
+	DECLARE Search_Element AS INTEGER
+	DECLARE CONSTANT TotalNumbers AS INTEGER AND STORE 10
+	PRINT " Enter ten numbers : "
+	FOR index 0 TO 9
+		ACCEPT Numbers[index]
+	END FOR
+	sortednumbers = bubblesort( Numbers , TotalNumbers )
+	PrintBinarySearch( sortednumbers , TotalNumbers , Search_Element )
+END
+
+/***********************************************
+Module Name		: PrintBinarySearch()
+Input Parameter	 	: SortedNumbers , totalnumbers , searchelement
+Output_Parameter	: Integer
+Description		: implementing the binary search
+Creation Date		: December 23, 2017 
+***********************************************/
+
+
+SUB PrintBinarySearch( SortedNumbers , totalnumbers , searchelement )
+
+	DECLARE LowerBound AS INTEGER
+	DECLARE UpperBound AS INTEGER
+	SET LowerBound = 0
+	SET Upper_Bound = total_number - 1
+	WHILE ( Lower_Bound <= Upper_Bound )
+	DO
+		Mid = ( Lower_Bound + Upper_Bound ) / 2
+		IF ( searchelement == SortedNumber[Mid] ) THEN
+			PRINT "Search Successfull at Location " +Mid
+		ELSE IF ( searchelement > sortednumber[Mid] )
+			Lower_Bound = Mid + 1
+		ELSE
+			Upper_Bound = Mid - 1
+		END IF
+	END WHILE
+	PRINT " Search unsucessful "
+
+END SUB 
+/***********************************************
+Module Name		: bubblesort( )
+Input Parameter	 	: numbers , totalnumbers
+Output_Parameter	: INTEGER
+Description		: implementing the bubble sort
+Creation Date		: December 23, 2017 
+***********************************************/
+
+
+SUB bubblesort( numbers , totalnumbers )
+
+	DECLARE round AS INTEGER
+	DECLARE temp_variable AS INTEGER
+	DECLARE index AS INTEGER
+	FOR round 1 TO ( totalnumbers - 1 )
+		FOR index  0 TO  ( totalnumbers - 1 -round )
+			IF ( numbers[index] > numbers[index + 1] ) THEN
+				temp_variable = numbers[index]
+				numbers[index + 1 ] = temp_variable
+			END IF
+		END FOR
+	END FOR
+return ( numbers[index] )			
+END SUB
+		

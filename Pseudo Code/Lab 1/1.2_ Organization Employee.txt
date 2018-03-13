@@ -1,0 +1,32 @@
+/*********************************************************************
+ * File                 : OrganizationEmployee.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to accept the experience and display their tag color. 
+ * Version              : 1.0
+ * Last Modified Date   : 21-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+
+BEGIN
+	DECLARE Years_of_Experience AS INTEGER
+	
+
+	PROMPT "Enter Years of Experience" 
+	ACCEPT Years_of_Experience
+
+	IF(Years_of_Experience < 0) THEN
+	PRINT "Invalid Input"
+	
+	ELSE IF(Years_of_Experience > 0 AND Years_of_Experience < 3) THEN
+	PRINT "Tag Color is Blue"  
+
+	ELSE IF(Years_of_Experience > 3 AND Years_of_Experience < 5) THEN
+	PRINT "Tag Color is Grey"
+
+	ELSE IF(Years_of_Experience > 5 AND Years_of_Experience < 10) THEN
+	PRINT "Tag Color is Yellow" 
+
+	ELSE 
+	PRINT "Tag Color is Red" 
+END
+

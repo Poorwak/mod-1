@@ -1,0 +1,158 @@
+/*********************************************************************************
+* Module Name         : 4.2.txt 
+* Return Type         : BOOLEAN
+* Author              : Capgemini
+* Creation Date       : 26/12/2017
+* Version	      : 1.0
+* Description         : Pseudocode to print total available leaves of an Employee
+
+*********************************************************************************/
+
+RECORD Employee
+
+	DECLARE EmpId as INTEGER
+
+	DECLARE employment_type AS STRING
+
+END RECORD
+
+BEGIN
+
+       		DECLARE emp AS Employee
+
+		DECLARE leaves, TotalLeaves AS INTEGER
+
+                PROMPT "Enter the EmployeeId" AND STORE IN emp.EmpId
+
+				IF(isValid(emp.EmpId) THEN
+
+                PROMPT "Enter the employment_type" AND STORE IN emp.employment_type
+
+					IF(isValid_employementType(emp.employement_type) THEN
+
+					IF(isValid_employee(empEmpId) THEN
+
+					totalLeaves= calculateTotalLeaves(emp.employment_type)
+
+			PRINT "Employee Id :" , emp.EmpId
+
+	                PRINT "Total Available Leaves are :", TotalLeaves
+
+					END IF
+
+					END IF
+
+			        END IF
+				
+				EXCEPTION
+		
+                    			WHEN InvalidEmployeeId THEN
+ 			
+                 			PRINT "This Employee ID does not exist"
+	
+				
+END
+
+
+/********************************************************************************
+* Module Name         : isValid_employee()
+* Input Parameters    : empid
+* Return Type         : BOOLEAN
+* Author              : Capgemini
+* Creation Date       : 26/12/2017
+* Description         : Pseudocode to print total available leaves of an Employee
+*********************************************************************************/
+
+SUB isValid_employee( empid )
+
+	IF(elementFound(empid) THEN
+
+		RETURN true
+
+	ELSE
+
+		RAISE InvalidEmployeeId('Empid does not exist ')
+		
+
+END
+
+
+
+/********************************************************************************
+* Module Name         : calculateTotalLeaves()
+* Input Parameters    : employment_type
+* Return Type         : INTEGER
+* Author              : Capgemini
+* Creation Date       : 26/12/2017
+* Description         : Pseudocode to print total available leaves of an Employee
+
+*********************************************************************************/
+
+SUB calculateTotalLeaves ( employment_type )
+     
+          DECLARE totalLeaves,leaves 
+	
+        		IF(employment_type=='PERMANENT') THEN
+
+				leaves=2;
+
+			ELSE IF(employment_type=='CONTRACT') THEN
+
+				leaves=1;
+
+			END IF
+
+			totalLeaves=leaves*12;
+
+			RETURN totalLeaves;
+
+END
+
+/*******************************************************************************
+* Module Name         : isValid_employment_type()
+* Input Parameters    : data
+* Return Type         : BOOLEAN
+* Author              : Capgemini
+* Creation Date       : 26/12/2017
+* Description         : Pseudocode to print total available leaves of an Employee  
+
+*********************************************************************************/
+
+SUB isValid_employment_type( type )
+
+	IF(type=='PERMANENT' OR type=='CONTRACT')
+
+	RETURN true
+
+	ELSE
+
+	RETURN false
+
+END
+
+
+
+/********************************************************************************
+* Module Name         : isValid()
+* Input Parameters    : data
+* Return Type         : BOOLEAN
+* Author              : Capgemini
+* Creation Date       : 26/12/2017
+* Description         : Pseudocode to print total available leaves of an Employee 
+
+*********************************************************************************/
+
+SUB isValid( data )
+
+	IF(isDigits(data)) THEN
+
+		RETURN true
+
+	ELSE	
+
+		RETURN false
+
+	END IF
+
+END SUB
+

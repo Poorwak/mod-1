@@ -1,0 +1,57 @@
+/**************************************************
+File 			: 3.7.txt
+Author Name 		: Capgemini
+Description		: Find the the substring in a string
+Version			: 1.0
+Creation Date		: December 23, 2017
+****************************************************/
+BEGIN
+
+	DECLARE String AS STRING
+	DECLARE SubString AS STRING
+	PROMPT " Enter the string : " AND STORE IN String
+	PROMPT " Enter the Sub string : " AND STORE IN SubString
+	lengthofsubstring = LengthofSubString( SubString )
+	index = indexofsubstring( String , SubString , lengthofsubstring )
+	IF ( index == -1 )THEN
+		PRINT " Substring Not found "
+	ELSE
+		PRINT " Substring found at index " ,index
+	END IF
+END
+
+***********************************************
+Module Name		: indexofsubstring()
+Input Parameter	 	: String , SubString , lengthofsubstring
+Output_Parameter	: INTEGER Index1
+Description		: Find the index of the substring on which it gets match with the string
+Creation Date		: December 23, 2017 
+***********************************************/
+
+
+SUB indexofsubstring( string , substring , lengthofsubstring )
+	
+	FOR Index1 0 TO string[Index1 + lengthofsubstring - 1]
+			Temp = Index1
+		FOR Index2 0 TO lengthofsubstring - 1
+			IF( string[Temp] != substring[ Index2] ) THEN
+				break
+			Temp += 1
+		END FOR
+	IF ( Index2 == lengthofsubstring ) THEN
+		return ( Index1 )
+	END IF
+	END FOR
+return ( -1 )
+
+END SUB
+
+SUB LengthofSubString( substring )
+	
+	FOR Index3 0 TO substring[ Index3 != '\0']
+		PRINT " Length of the substring is :" ,Index3
+	END FOR
+END SUB
+		
+
+	

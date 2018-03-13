@@ -1,0 +1,40 @@
+/*********************************************************************
+ * File                 : BinarytoDecimal.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to accept two numbers in a record and swap them, once swapped display them. 
+ * Version              : 1.0
+ * Last Modified Date   : 21-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+
+
+DECLARE num AS INTEGER
+DECLARE deci AS INTEGER
+
+BEGIN
+	DECLARE binary AS INTEGER
+	DECLARE deci, rem, base, decimal AS INTEGER
+	INITIALIZE base = 2
+	PROMPT "Enter binary number" AND STORE IN binary
+	CALCULATE decimal = BiToDi(binary)
+	PRINT "The decimal number is :" +decimal
+END
+
+/*********************************************************************
+ * Module               : BiToDi
+ * Input Parameter	: 
+ * Author Name          : Capgemini
+ * Desc                 : Program to accept two numbers in a record and swap them, once swapped display them. 
+ * Version              : 1.0
+ * Last Modified Date   : 21-Dec-2017
+ * Change Description   : Description about the changes implemented
+ **********************************************************
+
+SUB BiToDi(num)
+	WHILE(num > 0)
+	rem = num % 10
+	deci = deci + rem * base
+	base = base * 2
+	num = num / 10
+	RETURN deci
+END SUB

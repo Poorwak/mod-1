@@ -1,0 +1,36 @@
+/*****************************************************
+* File 			: ModifyPriceofProduct.txt
+* Author Name		: Capgemini
+* Description		: Modify to calculate the total Price of the product
+* Version		: 1.0
+* Last Modified Date	: 23-Dec-2017
+
+******************************************************/
+
+BEGIN
+
+	DECLARE Price AS INTEGER
+	PRINT " Enter price of your product "
+	ACCEPT Price
+	total_price = Calculate_Total_Price( Price )
+	PRINT  " Total price of product is: " +total_price
+END
+
+
+/*********************************************************************
+* Module Name         : Calculate_Total_Price( )
+* Input Parameters    : price
+* Return Type         : INTEGER
+* Author              : Capgemini
+* Creation Date       : 23-DEC-2017
+* Description         : Calculating total price of the product 
+ *********************************************************************/
+
+
+SUB Calculate_Total_Price( price )
+	
+	DECLARE Total_Price AS INTEGER
+	DECLARE CONSTANT Tax_Rate AS REAL AND STORE 0.56	
+	Total_Price = Price * Tax_Rate
+	return ( Total_Price )
+END SUB	

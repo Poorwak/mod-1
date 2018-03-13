@@ -1,0 +1,50 @@
+/*********************************************************************
+ * File                 : ModulerCalculateTotalLeaves.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to calculate total leaves applicable per year for an employee 
+ * Version              : 1.0
+ * Last Modified Date   : 23-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+
+
+RECORD Employee
+	DECLARE Id as INTEGER
+	DECLARE employmentType AS STRING
+END RECORD
+
+BEGIN
+	DECLARE emp AS Employee
+//leaves variable is used to store number of leaves per month
+
+	DECLARE leaves, TotalLeaves AS INTEGER
+	FOR index= 1 to 5
+		PROMPT "Enter the EmployeeId" AND STORE IN Employee.Id
+		PROMPT "Enter the employmentType" AND STORE IN Employee.employmentType
+	END FOR
+
+	printemptypecheck(emp)
+END
+
+/*********************************************************************
+* Module Name         : printemptypecheck()
+* Input Parameters    : emp
+* Return Type         : void
+* Author              : Capgemini
+* Creation Date       : 23-Dec-2017
+* Description         : display employee leaves 
+ *********************************************************************/
+
+SUB printemptypecheck(emp)
+	FOR index= 1 to 5
+		IF(employmentType == 'PERMANENT') THEN leaves = 2
+			TotalLeaves = leaves * 12
+		ELSE IF(employmentType == 'CONTRACT') THEN leaves = 1
+			TotalLeaves = leaves * 12
+		END IF
+
+		PRINT "Employee Id :"  Employee.Id
+		PRINT "Total Available Leaves are :" TotalLeaves
+	END FOR
+
+END SUB

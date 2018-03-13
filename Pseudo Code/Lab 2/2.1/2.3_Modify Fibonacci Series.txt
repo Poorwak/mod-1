@@ -1,0 +1,44 @@
+/*****************************************************
+* File 			: ModifyFibonnaciSeries.txt
+* Author Name		: Capgemini
+* Description		: Display the Fibonacci series
+* Version		: 1.0
+* Last Modified Date	: 23-Dec-2017
+
+******************************************************/
+BEGIN
+	DECLARE num AS INTEGER
+	DECLARE num1 AS INTEGER
+	DECLARE num2 AS INTEGER
+	INITIALIZE num1 TO 0
+	INTIALIZE num2 TO 1
+	
+	PRINT "Enter the Number of terms :"
+	ACCEPT num
+	printseries = PrintSeries( num,num1,num2 )
+	Print " Mathamatical Series : " ,printseries
+	
+END
+
+/*********************************************************************
+* Module Name         : PrintSeries( )
+* Input Parameters    : number
+* Return Type         : number
+* Author              : Capgemini
+* Creation Date       : 23-Dec-2017
+* Description         : Printing the Fibonacci series 
+ *********************************************************************/
+
+SUB PrintSeries( Num,Num1,Num2 )
+	DECLARE nextterm AS INTEGER
+	DECLARE index AS INTEGER
+	INTIALIZE nextterm TO 0
+	INITIALIZE index to 1
+
+	FOR index <= Num
+		PRINT " " ,Num1
+		nextterm  = Num1 + Num2
+		num1	  = Num2
+		num2	  = nextterm
+	END FOR
+END SUB
