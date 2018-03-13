@@ -1,0 +1,60 @@
+/*********************************************************************
+ * File                 : ModulerEmployeeSalary.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to calculate the salary of an employee 
+			   
+ * Version              : 1.0
+ * Last Modified Date   : 22-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+
+RECORD employee
+	DECLARE id AS INTEGER
+	DECLARE fullname[20] AS CHARACTER ARRAY
+	DECLARE salary(annual) AS INTEGER
+END RECORD
+
+
+BEGIN
+	PROMPT "Enter employee id" AND STORE IN employee.id
+	PROMPT "Enter employee fullname" AND STORE IN employee.fullname
+	PROMPT "Enter employee salary(annual)" AND STORE IN employee.salary(annual)
+	PROMPT "Enter no of days present" AND STORE IN no_of_days_present
+	salarycalc(employee, no_of_days_present)
+END
+
+
+/*********************************************************************
+* Module Name         : salarycalc()
+* Input Parameters    : number
+* Return Type         : number
+* Author              : Capgemini
+* Creation Date       : 22-Dec-2017
+* Description         : Calculating the salary of the employee 
+ *********************************************************************/
+
+SUB salarycalc(employee, no_of_days_present)
+	DECLARE CONSTANT DeductionAmount = 0.12
+	DECLARE totalsalary AS INTEGER
+	DECLARE salary AS INTEGER
+
+	CALCULATE salary = ((annual_salary / 365) * no_of_days_present) 
+	CALCULATE totalsalary = salary - (0.12 * salary)
+	RETURN totalsalary
+END SUB
+
+
+/*********************************************************************
+* Module Name         : display()
+* Input Parameters    : number
+* Return Type         : number
+* Author              : Capgemini
+* Creation Date       : 22-Dec-2017
+* Description         : salary display
+ *********************************************************************/
+
+SUB display(employee, totalsalary)
+	PRINT "Employee Id" +employee.id
+	PRINT "Employee Name" +employee.name
+	PRINT "Total Salary" +totalsalary
+END SUB

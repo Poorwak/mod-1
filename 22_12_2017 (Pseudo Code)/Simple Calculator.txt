@@ -1,0 +1,114 @@
+/*********************************************************************
+ * File                 : ModulerSimpleCalculator.txt
+ * Author Name          : Capgemini
+ * Desc                 : Program to write an application to simulate the use of a simple calculator. 
+ * Version              : 1.0
+ * Last Modified Date   : 22-Dec-2017
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+
+BEGIN
+	DECLARE num, num1, num2, result AS INTEGER
+	PROMPT "Enter the 2 numbers" 
+	ACCEPT num1, num2
+	
+	PROMPT "Select the type of opertaion to be performed"
+	ACCEPT num
+
+	IF(num == 1) THEN
+		result = add(num1, num2)
+		PRINT result
+	ELSE IF(num == 2) THEN
+		result = sub(num1, num2)
+		PRINT result
+	ELSE IF(num == 3) THEN
+		result = mul(num1, num2)
+		PRINT result
+	ELSE 
+		result = div(num1, num2)
+		PRINT result
+	END IF
+			
+END
+
+
+/*********************************************************************
+* Module Name         : choice()
+* Input Parameters    : number
+* Return Type         : number
+* Author              : Capgemini
+* Creation Date       : 22-Dec-2017
+* Description         : Performing arithematic operations 
+ *********************************************************************/
+
+SUB choice(num)
+	PRINT "Enter 1 for addition"
+	PRINT "Enter 2 for subtraction"
+	PRINT "Enter 3 for multiplication"
+	PRINT "Enter 4 for division"
+	
+END SUB	
+
+
+/*********************************************************************
+* Module Name         : addition()
+* Input Parameters    : number
+* Return Type         : number
+* Author              : Capgemini
+* Creation Date       : 22-Dec-2017
+* Description         : Addition operations 
+ *********************************************************************/
+
+SUB add(num1, num2)
+	DECLARE sum AS INTEGER 
+	CALCULATE sum = num1 + num2
+	RETURN sum
+END SUB
+
+
+/*********************************************************************
+* Module Name         : subtraction()
+* Input Parameters    : number
+* Return Type         : number
+* Author              : Capgemini
+* Creation Date       : 22-Dec-2017
+* Description         : subtraction operations 
+ *********************************************************************/
+
+SUB sub(num1, num2)
+	DECLARE sub AS INTEGER 
+	CALCULATE sub = num1 - num2
+	RETURN sub
+END SUB
+
+
+/*********************************************************************
+* Module Name         : multiplication()
+* Input Parameters    : number
+* Return Type         : number
+* Author              : Capgemini
+* Creation Date       : 22-Dec-2017
+* Description         : multiplication operations 
+ *********************************************************************/
+
+SUB mul(num1, num2)
+	DECLARE mul AS INTEGER 
+	CALCULATE mul = num1 * num2
+	RETURN mul
+END SUB
+
+
+/*********************************************************************
+* Module Name         : division()
+* Input Parameters    : number
+* Return Type         : number
+* Author              : Capgemini
+* Creation Date       : 22-Dec-2017
+* Description         : division operations 
+ *********************************************************************/
+
+SUB div(num1, num2)
+	DECLARE div AS INTEGER 
+	CALCULATE div = num1 / num2
+	RETURN div
+END SUB
