@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo on Basic tags</title>
+</head>
+<body>
+	<h1>basic Tags</h1>
+	<p>HyperText markup klanguage is the standard <strong> markup language <\strong> used to create
+	<span style="color:blue;font-weight:bold">
+	<static></span>web pages</p>
+	<hr/>
+	<pre>
+		Java
+	Java is a programming language.
+	<pre/>
+	<hr color="blue" height="5"/>
+	<div style="color:green"/>
+		<p>India is great</p>
+		<p>India has several states</p>
+		<p>Capital of India is
+		<span style="color:red">Delhi</span></p>
+	</div>
+</body>
+</html>
